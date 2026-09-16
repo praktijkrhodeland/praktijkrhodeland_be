@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173d37">
+    <meta name="description" content="Praktische informatie voor patiënten van Rhodeland in Merelbeke.">
+    <title>Info voor patiënten | Rhodeland</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .urgent-note {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: clamp(28px, 5vw, 70px);
+            align-items: center;
+            max-width: 880px;
+            margin-top: 78px;
+            padding: 34px 38px;
+            background: var(--mint);
+            border: 1px solid rgba(23, 61, 55, .1);
+        }
+
+        .urgent-mark {
+            display: grid;
+            aspect-ratio: 1;
+            place-items: center;
+            border: 1px solid rgba(23, 61, 55, .28);
+            border-radius: 50%;
+            color: var(--ink);
+            font-family: var(--display);
+            font-size: 1.8rem;
+            transform: rotate(-8deg);
+        }
+
+        .urgent-note .section-label {
+            margin-bottom: 14px;
+        }
+
+        .urgent-note h2 {
+            margin: 0 0 14px;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1;
+        }
+
+        .urgent-note p:not(.section-label) {
+            max-width: 620px;
+            margin: 0 0 10px;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.65;
+        }
+
+        .urgent-note p:last-child {
+            margin-bottom: 0;
+        }
+
+        .urgent-note strong {
+            color: var(--ink);
+        }
+
+        .updates {
+            max-width: 920px;
+            margin-top: 100px;
+        }
+
+        .updates .section-heading {
+            margin-bottom: 0;
+        }
+
+        .update-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .update-item {
+            display: grid;
+            grid-template-columns: 72px minmax(0, 1fr);
+            gap: 28px;
+            padding: 30px 0 32px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .update-number {
+            color: var(--coral);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+        }
+
+        .update-item h3 {
+            margin: -5px 0 10px;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            line-height: 1.05;
+        }
+
+        .update-item p {
+            max-width: 690px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        @media (max-width: 720px) {
+            .urgent-note {
+                grid-template-columns: 82px 1fr;
+                gap: 22px;
+                margin-top: 58px;
+                padding: 24px 20px;
+            }
+
+            .urgent-mark {
+                font-size: 1.1rem;
+            }
+
+            .updates {
+                margin-top: 72px;
+            }
+
+            .update-item {
+                grid-template-columns: 42px minmax(0, 1fr);
+                gap: 12px;
+                padding: 24px 0 26px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
+                aria-hidden="true">+</span>Rhodeland</a>
+        <span class="location">Merelbeke · België</span>
+    </header>
+
+    <main>
+        <a class="back-link" href="index.html">← Terug naar home</a>
+        <p class="eyebrow">Praktische informatie</p>
+        <h1>Info voor <em>patiënten.</em></h1>
+        <p class="lead">Hier houden we je op de hoogte van veranderingen en plannen binnen onze praktijk.</p>
+
+        <section class="urgent-note" aria-labelledby="wachtdienst-title">
+            <div class="urgent-mark" aria-hidden="true">1733</div>
+            <div>
+                <p class="section-label">Belangrijk om te weten</p>
+                <h2 id="wachtdienst-title">Wachtdienst vanaf 18u</h2>
+                <p>Vanaf 6 januari 2025 is er wachtdienst vanaf 18u. Je kan de wachtdienst bereiken via het nummer
+                    <strong>1733</strong>.
+                </p>
+                <p>We blijven raadplegingen aanbieden tot 19u. Er zal steeds minimum 1 arts beschikbaar zijn voor
+                    ingeschreven patiënten tot 19u.</p>
+            </div>
+        </section>
+
+        <section class="updates" aria-labelledby="updates-title">
+            <div class="section-heading">
+                <h2 id="updates-title">Wat verandert er?</h2>
+                <p>Onze plannen voor 2025</p>
+            </div>
+            <ol class="update-list">
+                <li class="update-item">
+                    <span class="update-number" aria-hidden="true">01</span>
+                    <div>
+                        <h3>Meer ruimte voor zorg</h3>
+                        <p>In de loop van 2025 hopen we ons praktijkgebouw verder uit te breiden met extra
+                            onderzoeksruimtes en meer ruimte voor onze diëtiste, psychologen en verpleegkundige. De
+                            uitbreiding zal achter het huidige praktijkgebouw gebeuren, waardoor we de hinder tot een
+                            minimum trachten te beperken.</p>
+                    </div>
+                </li>
+                <li class="update-item">
+                    <span class="update-number" aria-hidden="true">02</span>
+                    <div>
+                        <h3>Een praktijk voor de buurt</h3>
+                        <p>In de loop van 2025 gaan we onze patiëntenstop opheffen. We gaan ons richten op
+                            buurtgerichte zorg: mensen die binnen een straal van 5 km van onze praktijk wonen.</p>
+                    </div>
+                </li>
+                <li class="update-item">
+                    <span class="update-number" aria-hidden="true">03</span>
+                    <div>
+                        <h3>Sterker inzetten op preventie</h3>
+                        <p>We gaan in de loop van 2025 sterker inzetten op preventie. Onze praktijkverpleegkundige
+                            Katinka zal hierin een belangrijke taak op zich nemen.</p>
+                    </div>
+                </li>
+                <li class="update-item">
+                    <span class="update-number" aria-hidden="true">04</span>
+                    <div>
+                        <h3>Jouw ervaring telt</h3>
+                        <p>We voorzien ook een patiëntenbevraging met betrekking tot het verbeteren van onze
+                            dienstverlening.</p>
+                    </div>
+                </li>
+            </ol>
+        </section>
+    </main>
+
+    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke · België</span></footer>
+</body>
+
+</html>

@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#123d36">
+    <meta name="description"
+        content="Rhodeland, nieuwe huisartsenpraktijk in Merelbeke. Onze website krijgt binnenkort meer informatie.">
+    <title>Rhodeland | Huisartsenpraktijk in Merelbeke</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .page {
+            position: relative;
+            min-height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .page::before {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            top: -18rem;
+            right: -13rem;
+            width: 42rem;
+            height: 42rem;
+            border: 1px solid rgba(23, 61, 55, .1);
+            border-radius: 50%;
+            box-shadow: 0 0 0 3.5rem rgba(23, 61, 55, .025), 0 0 0 7rem rgba(23, 61, 55, .025);
+            pointer-events: none;
+        }
+
+        .page>.topbar,
+        .page>main,
+        .page>footer {
+            position: relative;
+            z-index: 1;
+        }
+
+        .brand-mark {
+            position: relative;
+        }
+
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--coral);
+            right: -3px;
+            top: 1px;
+        }
+
+        main {
+            display: grid;
+            grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+            align-items: center;
+            gap: clamp(50px, 9vw, 130px);
+            flex: 1;
+            padding: clamp(72px, 11vh, 140px) 0 clamp(72px, 12vh, 150px);
+        }
+
+        main h1 {
+            max-width: 650px;
+            font-size: clamp(3.6rem, 8vw, 7.8rem);
+            letter-spacing: -.045em;
+            line-height: .91;
+        }
+
+        main .eyebrow {
+            display: inline-flex;
+        }
+
+        main h1 em {
+            font-style: italic;
+        }
+
+        .intro {
+            max-width: 520px;
+            margin: 34px 0 0;
+            color: var(--muted);
+            font-size: clamp(1.05rem, 1.7vw, 1.25rem);
+            line-height: 1.65;
+        }
+
+        .notice {
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+            max-width: 460px;
+            margin-top: 44px;
+            padding-top: 20px;
+            border-top: 1px solid var(--line);
+        }
+
+        .notice-icon {
+            flex: 0 0 auto;
+            display: grid;
+            width: 36px;
+            height: 36px;
+            place-items: center;
+            border-radius: 50%;
+            background: var(--mint);
+            color: var(--ink);
+            font-size: 1.1rem;
+        }
+
+        .notice p {
+            margin: 0;
+            color: var(--ink);
+            font-size: .92rem;
+            line-height: 1.55;
+        }
+
+        .notice strong {
+            display: block;
+            margin-bottom: 3px;
+            font-size: .8rem;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .visual {
+            position: relative;
+            min-height: 430px;
+            display: grid;
+            place-items: center;
+        }
+
+        .visual::before {
+            content: '';
+            position: absolute;
+            width: min(31vw, 360px);
+            aspect-ratio: 1;
+            border-radius: 50%;
+            background: var(--mint);
+        }
+
+        .visual::after {
+            content: '';
+            position: absolute;
+            width: 92%;
+            height: 82%;
+            border: 1px solid rgba(23, 61, 55, .2);
+            border-radius: 50%;
+            transform: rotate(-28deg);
+        }
+
+        .card {
+            position: relative;
+            z-index: 1;
+            width: min(100%, 330px);
+            padding: 30px;
+            background: var(--white);
+            box-shadow: 0 24px 60px rgba(23, 61, 55, .12);
+            transform: rotate(3deg);
+        }
+
+        .card-label {
+            color: var(--coral);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+        }
+
+        .card h2 {
+            margin: 24px 0 20px;
+            font-family: var(--display);
+            font-size: 2.2rem;
+            font-weight: 400;
+            line-height: 1.04;
+        }
+
+        .card-rule {
+            width: 46px;
+            height: 2px;
+            margin: 26px 0 18px;
+            background: var(--coral);
+        }
+
+        .card-foot {
+            color: var(--ink);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+        }
+
+        .page footer {
+            letter-spacing: .03em;
+        }
+
+        @media (max-width: 720px) {
+
+            .topbar,
+            main,
+            footer {
+                width: min(100% - 40px, 560px);
+            }
+
+            .topbar {
+                padding: 22px 0;
+            }
+
+            .location {
+                font-size: .65rem;
+            }
+
+            main {
+                display: block;
+                padding: 72px 0 50px;
+            }
+
+            h1 {
+                font-size: clamp(3.8rem, 18vw, 6.4rem);
+            }
+
+            .visual {
+                min-height: 350px;
+                margin-top: 56px;
+            }
+
+            .visual::before {
+                width: 270px;
+            }
+
+            .visual::after {
+                width: 100%;
+                height: 80%;
+            }
+
+            footer {
+                display: block;
+                line-height: 1.7;
+            }
+
+            footer span {
+                display: block;
+            }
+        }
+
+        @media (prefers-reduced-motion: no-preference) {
+
+            .brand,
+            .eyebrow,
+            h1,
+            .intro,
+            .notice,
+            .visual {
+                animation: reveal .8s both;
+            }
+
+            .eyebrow {
+                animation-delay: .08s;
+            }
+
+            h1 {
+                animation-delay: .16s;
+            }
+
+            .intro {
+                animation-delay: .24s;
+            }
+
+            .notice {
+                animation-delay: .32s;
+            }
+
+            .visual {
+                animation-delay: .2s;
+            }
+
+            @keyframes reveal {
+                from {
+                    opacity: 0;
+                    transform: translateY(14px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="page">
+        <header class="topbar">
+            <a class="brand" href="/" aria-label="Rhodeland home">
+                <span class="brand-mark" aria-hidden="true">+</span>
+                Rhodeland
+            </a>
+            <span class="location">Merelbeke · België</span>
+        </header>
+
+        <main>
+            <section aria-labelledby="page-title">
+                <p class="eyebrow">Nieuwe huisartsenpraktijk</p>
+                <h1 id="page-title">Gezond.<br><em>Dichtbij.</em><br>Rhodeland.</h1>
+                <p class="intro">We bouwen aan een nieuwe plek voor warme, toegankelijke en kwaliteitsvolle
+                    huisartsenzorg in Merelbeke.</p>
+                <div class="notice">
+                    <span class="notice-icon" aria-hidden="true">i</span>
+                    <p><strong>Onze website is in opbouw</strong>Binnenkort vind je hier alle praktische informatie over
+                        onze praktijk en werking.</p>
+                </div>
+            </section>
+
+            <aside class="visual" aria-label="Rhodeland huisartsenpraktijk">
+                <div class="card">
+                    <span class="card-label">Binnenkort online</span>
+                    <h2>Een nieuwe praktijk, met aandacht voor jou.</h2>
+                    <div class="card-rule"></div>
+                    <span class="card-foot">Merelbeke · Oost-Vlaanderen</span>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <span>Rhodeland huisartsenpraktijk</span>
+            <span>Meer informatie volgt binnenkort</span>
+        </footer>
+    </div>
+</body>
+
+</html>
