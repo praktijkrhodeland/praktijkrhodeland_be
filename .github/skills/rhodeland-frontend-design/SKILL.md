@@ -194,6 +194,7 @@ Controls should be quiet and accessible:
 
 * Prefer underlined or softly filled inputs.
 * Use forest green for primary controls and coral for restrained hover emphasis.
+* Give all buttons and button-like calls to action subtly rounded corners, using a consistent `8px` border radius across the site.
 * Keep touch targets at least `44px` high.
 * Provide visible focus states using a soft forest or mint outline.
 * Keep labels visible; do not rely on placeholder text.
