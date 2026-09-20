@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#173d37">
-    <meta name="description" content="Maak kennis met het team van Rhodeland in Merelbeke.">
+    <meta name="description" content="Maak kennis met het team van Rhodeland in Merelbeke-Melle.">
     <title>Ons team | Rhodeland</title>
     <link rel="stylesheet" href="common.css">
     <style>
@@ -179,7 +179,15 @@
     <header class="topbar">
         <a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
                 aria-hidden="true">+</span>Rhodeland</a>
-        <span class="location">Merelbeke · België</span>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
+            aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
+        <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
+            <a href="consultaties.html">Consultaties</a>
+            <a href="index.html#over-ons">Wie zijn wij?</a>
+            <a href="index.html#zorg">Wat doen wij?</a>
+            <a href="patienten.html">Praktische info</a>
+        </nav>
+        <span class="location">Merelbeke-Melle · België</span>
     </header>
 
     <main>
@@ -187,7 +195,7 @@
         <p class="eyebrow">De mensen achter Rhodeland</p>
         <h1>Ons <em>team.</em></h1>
         <p class="lead">Een praktijk wordt gemaakt door mensen. Maak kennis met het team dat klaarstaat voor warme en
-            toegankelijke huisartsenzorg in Merelbeke.</p>
+            toegankelijke huisartsenzorg in Merelbeke-Melle.</p>
 
         <section class="team-section" aria-labelledby="artsen-title">
             <div class="section-heading">
@@ -247,20 +255,21 @@
             <div class="staff-layout">
                 <h2 id="secretariaat-title">Ons secretariaat</h2>
                 <div class="staff-copy">
-                    <p>Onze praktijkassistente Kristien staat ter beschikking voor het noteren van afspraken en
-                        huisbezoeken en voor het afhandelen van alle administratieve formaliteiten.</p>
-                    <p><strong>Openingsuren:</strong> Maandag 7:30 – 11:30 en 14:00 – 18:00. Dinsdag tem donderdag
-                        7:30-11:30.</p>
-                    <p>Gelieve buiten deze openingsuren enkel te bellen voor dringende zaken (zoals huisbezoeken,
-                        raadplegingen, …) en administratieve zaken te houden voor tijdens de openingsuren. Dit omdat de
-                        artsen zelf de telefoon doen in de namiddag, en veel oproepen storend zijn tijdens de
-                        consultaties.</p>
+                    <p>Onze praktijkverpleegkundige Katinka ondersteunt ons met zorgprotocollen, preventieprojecten en
+                        campagnes. U kunt ook bij haar een consult inboeken.</p>
+                    <p><strong>Openingsuren praktijk:</strong> Maandag tot vrijdag van 08u00 tot 18u00. Consultaties
+                        zijn enkel op afspraak.</p>
+                    <p><strong>Openingsuren secretariaat:</strong> Maandag tot vrijdag van 08u00 tot 12u00.</p>
+                    <p>Na 12u00 zijn wij enkel bereikbaar voor dringende medische zaken. Gelieve administratieve
+                        vragen in de voormiddag te stellen, zodat de artsen tijdens hun consultaties zo weinig mogelijk
+                        gestoord worden.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke · België</span></footer>
+    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke-Melle · België</span></footer>
+    <script src="menu.js"></script>
 </body>
 
 </html>

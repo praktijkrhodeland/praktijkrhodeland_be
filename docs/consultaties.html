@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="nl">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#173d37">
+    <meta name="description" content="Informatie over afspraken en consultaties bij praktijk Rhodeland in Merelbeke-Melle.">
+    <title>Consultaties | Rhodeland</title>
+    <link rel="stylesheet" href="common.css">
+    <style>
+        .consultation-intro {
+            max-width: 720px;
+        }
+
+        .consultation-section {
+            max-width: 920px;
+            margin-top: 78px;
+        }
+
+        .consultation-section .section-heading {
+            margin-bottom: 0;
+        }
+
+        .consultation-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .consultation-item {
+            display: grid;
+            grid-template-columns: 72px minmax(0, 1fr);
+            gap: 28px;
+            padding: 30px 0 32px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .consultation-number {
+            color: var(--coral);
+            font-size: .75rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+        }
+
+        .consultation-item h2 {
+            margin: -5px 0 10px;
+            font-size: clamp(1.7rem, 3vw, 2.4rem);
+            line-height: 1.05;
+        }
+
+        .consultation-item p,
+        .consultation-item li {
+            max-width: 700px;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .consultation-item ul {
+            display: grid;
+            gap: 7px;
+            margin: 14px 0 0;
+            padding-left: 20px;
+        }
+
+        .consultation-item li::marker {
+            color: var(--coral);
+        }
+
+        .booking-action {
+            margin-top: 58px;
+            padding: 30px 34px;
+            background: var(--mint);
+            border: 1px solid rgba(23, 61, 55, .1);
+        }
+
+        .booking-action p {
+            max-width: 650px;
+            margin: 0 0 20px;
+            color: var(--muted);
+            line-height: 1.65;
+        }
+
+        .appointment-link {
+            display: inline-block;
+            padding: 16px 22px;
+            background: var(--coral);
+            color: var(--white);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .appointment-link:hover {
+            background: var(--ink);
+        }
+
+        @media (max-width: 720px) {
+            .consultation-section {
+                margin-top: 58px;
+            }
+
+            .consultation-item {
+                grid-template-columns: 42px minmax(0, 1fr);
+                gap: 12px;
+                padding: 24px 0 26px;
+            }
+
+            .booking-action {
+                margin-top: 42px;
+                padding: 24px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
+                aria-hidden="true">+</span>Rhodeland</a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
+            aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
+        <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
+            <a href="consultaties.html">Consultaties</a>
+            <a href="index.html#over-ons">Wie zijn wij?</a>
+            <a href="index.html#zorg">Wat doen wij?</a>
+            <a href="patienten.html">Praktische info</a>
+        </nav>
+        <span class="location">Merelbeke-Melle · België</span>
+    </header>
+
+    <main>
+        <a class="back-link" href="index.html">← Terug naar home</a>
+        <p class="eyebrow">Voor u een afspraak maakt</p>
+        <h1>Alles over <em>consultaties.</em></h1>
+        <p class="lead consultation-intro">Lees deze informatie vóór u een afspraak maakt. Zo kunnen we voor elke patiënt
+            voldoende tijd voorzien en u naar de juiste zorgverlener begeleiden.</p>
+
+        <section class="consultation-section" aria-labelledby="consultation-details-title">
+            <div class="section-heading">
+                <h2 id="consultation-details-title">Afspraken</h2>
+                <p>Belangrijk om te weten</p>
+            </div>
+            <ol class="consultation-list">
+                <li class="consultation-item">
+                    <span class="consultation-number" aria-hidden="true">01</span>
+                    <div>
+                        <h2>Eén afspraak = één persoon</h2>
+                        <p>Maak voor elke patiënt een afzonderlijke afspraak.</p>
+                    </div>
+                </li>
+                <li class="consultation-item">
+                    <span class="consultation-number" aria-hidden="true">02</span>
+                    <div>
+                        <h2>Langere consultaties</h2>
+                        <p>Voor uitstrijkjes, pre-operatieve onderzoeken, ECG’s of elk consult dat meer tijd vraagt, gelieve
+                            telefonisch te bellen. We voorzien dan extra tijd.</p>
+                    </div>
+                </li>
+                <li class="consultation-item">
+                    <span class="consultation-number" aria-hidden="true">03</span>
+                    <div>
+                        <h2>Dringende medische vragen</h2>
+                        <p>Ook wanneer u online geen vrije afspraak meer ziet, kunt u voor een medisch urgente vraag bij een
+                            arts terecht. Het telefoonnummer is nog niet gekend. We maken dit binnenkort bekend.</p>
+                    </div>
+                </li>
+                <li class="consultation-item">
+                    <span class="consultation-number" aria-hidden="true">04</span>
+                    <div>
+                        <h2>Onze praktijkverpleegkundige</h2>
+                        <p>U kunt online bij Katinka inboeken voor onder meer:</p>
+                        <ul>
+                            <li>ECG (hartfilm)</li>
+                            <li>Uitspuiten van oorproppen, wondzorg en verwijderen van hechtingen</li>
+                            <li>Controle van bloeddruk en opvolging van diabetes en hartfalen</li>
+                            <li>Preventieve zorg, zoals uitstrijkjes, mammografie, bevolkingsonderzoek naar darmkanker en vaccinaties</li>
+                            <li>Toedienen van medicatie via inspuiting</li>
+                            <li>Nakijken en opstellen van een actuele medicatielijst</li>
+                            <li>Acute of milde luchtwegklachten</li>
+                        </ul>
+                    </div>
+                </li>
+            </ol>
+        </section>
+
+        <section class="booking-action" aria-labelledby="booking-title">
+            <p class="section-label">Afspraak maken</p>
+            <h2 id="booking-title">Klaar om een afspraak te boeken?</h2>
+            <p>Na het lezen van deze informatie kunt u verdergaan naar Introlution om uw afspraak te maken.</p>
+            <a class="appointment-link" href="https://www.introlution.be" target="_blank" rel="noopener">Maak een afspraak via Introlution</a>
+        </section>
+    </main>
+
+    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke-Melle · België</span></footer>
+    <script src="menu.js"></script>
+</body>
+
+</html>

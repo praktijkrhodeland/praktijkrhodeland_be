@@ -6,16 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#123d36">
     <meta name="description"
-        content="Rhodeland, nieuwe huisartsenpraktijk in Merelbeke. Onze website krijgt binnenkort meer informatie.">
-    <title>Rhodeland | Huisartsenpraktijk in Merelbeke</title>
+        content="Praktijk Rhodeland is een nieuwe huisartsenpraktijk in Merelbeke-Melle voor kwalitatieve, toegankelijke en warme zorg.">
+    <title>Rhodeland | Huisartsenpraktijk in Merelbeke-Melle</title>
     <link rel="stylesheet" href="common.css">
     <style>
         .page {
             position: relative;
             min-height: 100vh;
             overflow: hidden;
-            display: flex;
-            flex-direction: column;
         }
 
         .page::before {
@@ -39,6 +37,30 @@
             z-index: 1;
         }
 
+        .page>.topbar {
+            z-index: 5;
+        }
+
+        .site-nav {
+            display: flex;
+            gap: 24px;
+            margin-left: auto;
+            color: var(--muted);
+            font-size: .76rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .site-nav a {
+            text-decoration: none;
+        }
+
+        .site-nav a:hover {
+            color: var(--coral);
+        }
+
         .brand-mark {
             position: relative;
         }
@@ -55,12 +77,16 @@
         }
 
         main {
+            padding: 0 0 100px;
+        }
+
+        .hero {
             display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(300px, .9fr);
+            grid-template-columns: minmax(0, 760px);
             align-items: center;
             gap: clamp(50px, 9vw, 130px);
-            flex: 1;
-            padding: clamp(72px, 11vh, 140px) 0 clamp(72px, 12vh, 150px);
+            min-height: 650px;
+            padding: clamp(72px, 11vh, 140px) 0;
         }
 
         main h1 {
@@ -84,6 +110,40 @@
             color: var(--muted);
             font-size: clamp(1.05rem, 1.7vw, 1.25rem);
             line-height: 1.65;
+        }
+
+        .appointment {
+            display: inline-block;
+            margin-top: 34px;
+            padding: 16px 22px;
+            background: var(--coral);
+            color: var(--white);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .appointment:hover {
+            background: var(--ink);
+        }
+
+        button.appointment {
+            border: 0;
+            font: inherit;
+            cursor: not-allowed;
+            opacity: .65;
+        }
+
+        button.appointment:hover {
+            background: var(--coral);
+        }
+
+        .appointment-note {
+            margin: 10px 0 0;
+            color: var(--muted);
+            font-size: .82rem;
         }
 
         .notice {
@@ -194,6 +254,85 @@
             letter-spacing: .03em;
         }
 
+        .content-section {
+            padding: 100px 0 0;
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: .75fr 1.25fr;
+            gap: clamp(35px, 8vw, 110px);
+            padding-top: 30px;
+            border-top: 1px solid var(--line);
+        }
+
+        .content-grid h2 {
+            margin: 0;
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            line-height: 1;
+        }
+
+        .content-copy {
+            color: var(--muted);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+
+        .content-copy p {
+            margin: 0 0 18px;
+        }
+
+        .service-list,
+        .info-list {
+            display: grid;
+            gap: 0;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .service-list li,
+        .info-list li {
+            padding: 17px 0;
+            border-bottom: 1px solid var(--line);
+            color: var(--ink);
+        }
+
+        .service-list li::before {
+            content: '+';
+            display: inline-block;
+            width: 28px;
+            color: var(--coral);
+            font-weight: 700;
+        }
+
+        .info-list strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--ink);
+        }
+
+        .info-list span,
+        .content-copy small {
+            color: var(--muted);
+        }
+
+        .location-link {
+            color: var(--ink);
+            text-decoration-color: var(--coral);
+            text-underline-offset: 4px;
+        }
+
+        .support-note {
+            margin-top: 25px;
+            padding: 22px;
+            background: var(--mint);
+        }
+
+        .support-note strong {
+            color: var(--ink);
+        }
+
         @media (max-width: 720px) {
 
             .topbar,
@@ -210,8 +349,34 @@
                 font-size: .65rem;
             }
 
-            main {
+            .site-nav {
+                position: absolute;
+                z-index: 10;
+                top: calc(100% + 1px);
+                right: 0;
+                display: none;
+                flex-direction: column;
+                width: min(260px, calc(100vw - 40px));
+                margin-left: 0;
+                padding: 10px;
+                gap: 2px;
+                background: var(--white);
+                border: 1px solid var(--line);
+                box-shadow: 0 18px 35px rgba(23, 61, 55, .12);
+                font-size: .62rem;
+            }
+
+            .site-nav a {
+                padding: 12px 10px;
+            }
+
+            .site-nav.is-open {
+                display: flex;
+            }
+
+            .hero {
                 display: block;
+                min-height: 0;
                 padding: 72px 0 50px;
             }
 
@@ -222,6 +387,18 @@
             .visual {
                 min-height: 350px;
                 margin-top: 56px;
+            }
+
+            .content-section {
+                padding-top: 72px;
+            }
+
+            .content-grid {
+                display: block;
+            }
+
+            .content-grid h2 {
+                margin-bottom: 28px;
             }
 
             .visual::before {
@@ -246,11 +423,14 @@
         @media (prefers-reduced-motion: no-preference) {
 
             .brand,
+            .site-nav,
             .eyebrow,
             h1,
             .intro,
+            .appointment,
             .notice,
-            .visual {
+            .visual,
+            .content-section {
                 animation: reveal .8s both;
             }
 
@@ -264,6 +444,10 @@
 
             .intro {
                 animation-delay: .24s;
+            }
+
+            .appointment {
+                animation-delay: .28s;
             }
 
             .notice {
@@ -296,37 +480,101 @@
                 <span class="brand-mark" aria-hidden="true">+</span>
                 Rhodeland
             </a>
-            <span class="location">Merelbeke · België</span>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
+                aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
+            <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
+                <a href="consultaties.html">Consultaties</a>
+                <a href="#over-ons">Wie zijn wij?</a>
+                <a href="#zorg">Wat doen wij?</a>
+                <a href="patienten.html">Praktische info</a>
+            </nav>
+            <span class="location">Merelbeke-Melle · België</span>
         </header>
 
         <main>
-            <section aria-labelledby="page-title">
+            <section class="hero" aria-labelledby="page-title">
+                <div>
                 <p class="eyebrow">Nieuwe huisartsenpraktijk</p>
-                <h1 id="page-title">Gezond.<br><em>Dichtbij.</em><br>Rhodeland.</h1>
-                <p class="intro">We bouwen aan een nieuwe plek voor warme, toegankelijke en kwaliteitsvolle
-                    huisartsenzorg in Merelbeke.</p>
+                <h1 id="page-title">Welkom bij<br><em>praktijk Rhodeland</em></h1>
+                <p class="intro">Vanaf begin november starten wij een nieuwe huisartsenpraktijk in Merelbeke-Melle. We
+                    kijken ernaar uit u te mogen verwelkomen.</p>
+                <p class="intro">We streven naar kwalitatieve, wetenschappelijke, toegankelijke en warme zorg, met
+                    een respectvolle en persoonlijke arts-patiëntrelatie als basis.</p>
+                <a class="appointment" href="consultaties.html">Maak een afspraak</a>
+                <p class="appointment-note">Lees eerst de informatie over consultaties.</p>
                 <div class="notice">
                     <span class="notice-icon" aria-hidden="true">i</span>
-                    <p><strong>Onze website is in opbouw</strong>Binnenkort vind je hier alle praktische informatie over
-                        onze praktijk en werking.</p>
+                    <p><strong>Telefonisch bereikbaar</strong>Het telefoonnummer is nog niet gekend. We maken dit
+                        binnenkort bekend.</p>
+                </div>
                 </div>
             </section>
 
-            <aside class="visual" aria-label="Rhodeland huisartsenpraktijk">
-                <div class="card">
-                    <span class="card-label">Binnenkort online</span>
-                    <h2>Een nieuwe praktijk, met aandacht voor jou.</h2>
-                    <div class="card-rule"></div>
-                    <span class="card-foot">Merelbeke · Oost-Vlaanderen</span>
+            <section class="content-section" id="over-ons" aria-labelledby="over-ons-title">
+                <div class="content-grid">
+                    <h2 id="over-ons-title">Wie zijn wij?</h2>
+                    <div class="content-copy">
+                        <p>Een nieuwe praktijk met een warm en deskundig team.</p>
+                        <a class="appointment" href="team.html">Maak kennis met ons team</a>
+                    </div>
                 </div>
-            </aside>
+            </section>
+
+            <section class="content-section" id="waar" aria-labelledby="waar-title">
+                <div class="content-grid">
+                    <h2 id="waar-title">Waar?</h2>
+                    <div class="content-copy">
+                        <p>Praktijk Rhodeland komt in Merelbeke-Melle. Het definitieve adres en telefoonnummer volgen
+                            binnenkort.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="zorg" aria-labelledby="zorg-title">
+                <div class="content-grid">
+                    <h2 id="zorg-title">Wat doen wij?</h2>
+                    <div class="content-copy">
+                        <p>U kunt bij ons terecht vanaf de geboorte tot het levenseinde. We bieden hoogstaande zorg,
+                            telkens met aandacht voor uw noden als patiënt.</p>
+                        <ul class="service-list">
+                            <li>Consultaties bij acute infecties, ook voor baby’s en jonge kinderen</li>
+                            <li>Opvolging van chronische aandoeningen zoals diabetes en hartfalen</li>
+                            <li>Preventieve onderzoeken, uitstrijkjes, vaccinatiecontrole en jaarlijkse bloedafnames</li>
+                            <li>Cryotherapie voor wratjes</li>
+                            <li>Begeleiding bij rookstop</li>
+                            <li>Psychologische ondersteuning wanneer het even moeilijker gaat</li>
+                            <li>Gesprekken over het levenseinde en palliatieve zorg</li>
+                        </ul>
+                        <p class="support-note"><strong>Onze praktijkverpleegkundige Katinka</strong> ondersteunt het
+                            team met zorgprotocollen en preventieprojecten. U kunt ook bij haar een consult inboeken.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="content-section" id="praktisch" aria-labelledby="praktisch-title">
+                <div class="content-grid">
+                    <h2 id="praktisch-title">Praktische informatie</h2>
+                    <div class="content-copy">
+                    <p>De belangrijkste informatie voor uw bezoek, helder samengebracht op één pagina.</p>
+                        <ul class="info-list">
+                            <li><strong>Openingsuren praktijk</strong><span>Maandag tot vrijdag: 08u00 – 18u00.</span></li>
+                            <li><strong>Openingsuren secretariaat</strong><span>Maandag tot vrijdag: 08u00 – 12u00.</span></li>
+                        <li><strong>Dringende hulp</strong><span>Vanaf 18u of in het weekend: bel 1733.</span></li>
+                            <li><strong>Huisbezoeken</strong><span>Telefonisch aan te vragen en enkel mogelijk in
+                                Merelbeke.</span></li>
+                        </ul>
+                    <a class="appointment" href="patienten.html">Bekijk alle praktische informatie</a>
+                    </div>
+                </div>
+            </section>
         </main>
 
         <footer>
             <span>Rhodeland huisartsenpraktijk</span>
-            <span>Meer informatie volgt binnenkort</span>
+            <span>Merelbeke-Melle · België</span>
         </footer>
     </div>
+    <script src="menu.js"></script>
 </body>
 
 </html>
