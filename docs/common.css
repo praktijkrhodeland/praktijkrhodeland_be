@@ -61,18 +61,21 @@ footer {
     z-index: 5;
     display: flex;
     align-items: center;
+    gap: clamp(24px, 4vw, 56px);
     padding: 30px 0;
     border-bottom: 1px solid var(--line);
 }
 
 .site-nav {
     display: flex;
+    align-items: center;
     gap: 24px;
     margin-left: auto;
     color: var(--muted);
     font-size: .76rem;
     font-weight: 700;
     letter-spacing: .08em;
+    line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -134,6 +137,7 @@ footer {
     font-size: 1rem;
     font-weight: 700;
     letter-spacing: .06em;
+    line-height: 1;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -151,10 +155,11 @@ footer {
 }
 
 .location {
-    margin-left: auto;
     color: var(--muted);
     font-size: .78rem;
     letter-spacing: .12em;
+    line-height: 1;
+    white-space: nowrap;
     text-transform: uppercase;
 }
 
@@ -248,11 +253,32 @@ h1 em {
 
 footer {
     display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px 24px;
     justify-content: space-between;
     padding: 20px 0 28px;
     border-top: 1px solid var(--line);
     color: var(--muted);
     font-size: .75rem;
+}
+
+.footer-appointment {
+    display: inline-block;
+    flex-basis: 100%;
+    width: fit-content;
+    padding: 13px 18px;
+    background: var(--coral);
+    color: var(--white);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.footer-appointment:hover {
+    background: var(--ink);
 }
 
 @media (max-width: 720px) {
@@ -269,6 +295,10 @@ footer {
 
     .location {
         display: none;
+    }
+
+    .topbar {
+        gap: 0;
     }
 
     .site-nav {
@@ -323,6 +353,10 @@ footer {
 
     footer span {
         display: block;
+    }
+
+    .footer-appointment {
+        margin-bottom: 12px;
     }
 }
 

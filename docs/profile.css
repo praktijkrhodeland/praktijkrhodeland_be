@@ -20,6 +20,13 @@
     text-transform: uppercase;
 }
 
+.profile-photo {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
 .photo-placeholder::before {
     content: '';
     position: absolute;
@@ -47,6 +54,10 @@
     width: 100%;
 }
 
+.profile-intro .profile-photo {
+    width: 100%;
+}
+
 .profile-role {
     margin: 0 0 18px;
     color: var(--coral);
@@ -68,6 +79,14 @@
     line-height: 1.7;
 }
 
+.profile-copy p {
+    margin: 0 0 18px;
+}
+
+.profile-copy p:last-child {
+    margin-bottom: 0;
+}
+
 @media (max-width: 900px) {
     .profile-intro {
         grid-template-columns: minmax(220px, 300px) 1fr;
@@ -80,6 +99,11 @@
     }
 
     .profile-intro .photo-placeholder {
+        max-width: 310px;
+        margin-bottom: 38px;
+    }
+
+    .profile-intro .profile-photo {
         max-width: 310px;
         margin-bottom: 38px;
     }

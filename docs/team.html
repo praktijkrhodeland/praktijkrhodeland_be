@@ -15,14 +15,18 @@
 
         .team-grid {
             display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 20px;
         }
 
         .person-card {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            overflow: hidden;
             background: var(--white);
             border: 1px solid var(--line);
+            border-radius: 22px;
             text-decoration: none;
             transition: transform .4s ease, box-shadow .4s ease;
         }
@@ -30,6 +34,16 @@
         .person-card:hover {
             transform: translateY(-6px);
             box-shadow: 0 18px 35px rgba(23, 61, 55, .1);
+        }
+
+        .person-photo,
+        .photo-placeholder {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            background: var(--mint);
+            border-radius: 22px 22px 0 0;
         }
 
         .photo-placeholder {
@@ -70,7 +84,29 @@
             transform: translate(-50%, -50%);
         }
 
+        .team-grid.is-single {
+            grid-template-columns: minmax(0, 1fr);
+            max-width: calc((100% - 40px) / 3);
+            margin: 0 auto;
+        }
+
+        .team-grid.is-single .person-card {
+            width: 100%;
+            max-width: 420px;
+            margin-inline: auto;
+        }
+
+        .team-grid.is-single .person-photo,
+        .team-grid.is-single .photo-placeholder {
+            width: 100%;
+            max-height: none;
+        }
+
         .person-info {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            justify-content: center;
             padding: 20px 20px 22px;
         }
 
@@ -136,12 +172,20 @@
             .team-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+
+            .team-grid.is-single {
+                max-width: calc((100% - 20px) / 2);
+            }
         }
 
         @media (max-width: 720px) {
             .team-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 12px;
+            }
+
+            .team-grid.is-single {
+                max-width: calc((100% - 12px) / 2);
             }
 
             .person-info {
@@ -183,11 +227,12 @@
             aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
         <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
             <a href="consultaties.html">Consultaties</a>
-            <a href="index.html#over-ons">Wie zijn wij?</a>
+            <a href="team.html">Wie zijn wij?</a>
             <a href="index.html#zorg">Wat doen wij?</a>
             <a href="patienten.html">Praktische info</a>
+            <a href="index.html#waar">Contact &amp; route</a>
         </nav>
-        <span class="location">Merelbeke-Melle · België</span>
+        <span class="location">Merelbeke · België</span>
     </header>
 
     <main>
@@ -195,80 +240,68 @@
         <p class="eyebrow">De mensen achter Rhodeland</p>
         <h1>Ons <em>team.</em></h1>
         <p class="lead">Een praktijk wordt gemaakt door mensen. Maak kennis met het team dat klaarstaat voor warme en
-            toegankelijke huisartsenzorg in Merelbeke-Melle.</p>
+            toegankelijke huisartsenzorg in Merelbeke.</p>
 
         <section class="team-section" aria-labelledby="artsen-title">
             <div class="section-heading">
-                <h2 id="artsen-title">Huisartsen</h2>
-                <p>Ontdek het profiel van elke arts.</p>
+                <h2 id="artsen-title">Artsen</h2>
+                <p>Ons medisch team.</p>
             </div>
             <div class="team-grid">
-                <a class="person-card" href="arts-1.html">
-                    <div class="photo-placeholder">Foto placeholder</div>
-                    <div class="person-info"><span class="person-role">Huisarts</span>
-                        <h3>Dr. Voornaam Naam</h3><span class="person-link">Bekijk profiel →</span>
+                <a class="person-card" href="stefanie-vermandere.html">
+                    <img class="person-photo" src="images/Stefanie Vermandere.jpg" alt="Dr. Stefanie Vermandere">
+                    <div class="person-info"><span class="person-role">Arts</span>
+                        <h3>Dr. Stefanie Vermandere</h3>
                     </div>
                 </a>
-                <a class="person-card" href="arts-2.html">
-                    <div class="photo-placeholder">Foto placeholder</div>
-                    <div class="person-info"><span class="person-role">Huisarts</span>
-                        <h3>Dr. Voornaam Naam</h3><span class="person-link">Bekijk profiel →</span>
+                <a class="person-card" href="roy-van-durme.html">
+                    <img class="person-photo" src="images/Roy Van Durme.jpeg" alt="Dr. Roy Van Durme">
+                    <div class="person-info"><span class="person-role">Arts</span>
+                        <h3>Dr. Roy Van Durme</h3>
                     </div>
                 </a>
-                <a class="person-card" href="arts-3.html">
-                    <div class="photo-placeholder">Foto placeholder</div>
-                    <div class="person-info"><span class="person-role">Huisarts</span>
-                        <h3>Dr. Voornaam Naam</h3><span class="person-link">Bekijk profiel →</span>
-                    </div>
-                </a>
-                <a class="person-card" href="arts-4.html">
-                    <div class="photo-placeholder">Foto placeholder</div>
-                    <div class="person-info"><span class="person-role">Huisarts</span>
-                        <h3>Dr. Voornaam Naam</h3><span class="person-link">Bekijk profiel →</span>
+                <a class="person-card" href="hendrik-bovendaerde.html">
+                    <div class="photo-placeholder">Foto volgt</div>
+                    <div class="person-info"><span class="person-role">Arts</span>
+                        <h3>Dr. Hendrik Bovendaerde</h3>
                     </div>
                 </a>
             </div>
         </section>
 
-        <section class="team-section" aria-labelledby="ondersteuning-title">
+        <section class="team-section" aria-labelledby="verpleegkundige-title">
             <div class="section-heading">
-                <h2 id="ondersteuning-title">Ondersteuning</h2>
-                <p>Een team rond de patiënt.</p>
+                <h2 id="verpleegkundige-title">Verpleegkundige</h2>
+                <p>Ondersteuning en preventie in de praktijk.</p>
             </div>
-            <div class="team-grid">
-                <div class="person-card">
-                    <div class="photo-placeholder">Foto placeholder</div>
+            <div class="team-grid is-single">
+                <a class="person-card" href="katinka.html">
+                    <div class="photo-placeholder">Foto volgt</div>
                     <div class="person-info"><span class="person-role">Verpleegkundige</span>
-                        <h3>Voornaam Naam</h3>
+                        <h3>Katinka</h3>
                     </div>
-                </div>
-                <div class="person-card">
-                    <div class="photo-placeholder">Foto placeholder</div>
-                    <div class="person-info"><span class="person-role">Huisarts in opleiding</span>
-                        <h3>Dr. Voornaam Naam</h3>
-                    </div>
-                </div>
+                </a>
             </div>
         </section>
 
-        <section class="staff-section" aria-labelledby="secretariaat-title">
-            <div class="staff-layout">
-                <h2 id="secretariaat-title">Ons secretariaat</h2>
-                <div class="staff-copy">
-                    <p>Onze praktijkverpleegkundige Katinka ondersteunt ons met zorgprotocollen, preventieprojecten en
-                        campagnes. U kunt ook bij haar een consult inboeken.</p>
-                    <p><strong>Openingsuren praktijk:</strong> Maandag tot vrijdag van 08u00 tot 18u00. Consultaties
-                        zijn enkel op afspraak.</p>
-                    <p><strong>Openingsuren secretariaat:</strong> Maandag tot vrijdag van 08u00 tot 12u00.</p>
-                    <p>Na 12u00 zijn wij enkel bereikbaar voor dringende medische zaken. Gelieve administratieve
-                        vragen in de voormiddag te stellen, zodat de artsen tijdens hun consultaties zo weinig mogelijk
-                        gestoord worden.</p>
-                </div>
+        <section class="team-section" aria-labelledby="secretaresse-title">
+            <div class="section-heading">
+                <h2 id="secretaresse-title">Secretaresse</h2>
+                <p>Jouw eerste contact in de praktijk.</p>
+            </div>
+            <div class="team-grid is-single">
+                <a class="person-card" href="kristien.html">
+                    <img class="person-photo" src="images/Kristien.jpeg" alt="Kristien, secretaresse">
+                    <div class="person-info"><span class="person-role">Secretaresse</span>
+                        <h3>Kristien</h3>
+                    </div>
+                </a>
             </div>
         </section>
+
     </main>
 
-    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke-Melle · België</span></footer>
+    <footer><a class="footer-appointment" href="consultaties.html">Maak een afspraak</a><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke · België</span></footer>
     <script src="menu.js"></script>
 </body>
 
