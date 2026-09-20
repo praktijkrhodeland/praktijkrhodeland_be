@@ -1,0 +1,1062 @@
+/* ===========================================================================
+   Optie 3 — "Modern & krachtig"
+   Hoog contrast, strakke rasters, grote typografie. Geen ronde hoeken, geen
+   schaduwen: structuur komt van lijnen en van zwarte en rode vlakken.
+   =========================================================================== */
+
+:root {
+    --gutter: 30px;
+    --ink: #121212;
+    --ink-soft: #1d1d1d;
+    --paper: #fbfaf8;
+    --white: #ffffff;
+    --body: #55504c;
+    --red: #c62a13;
+    --red-bright: #e8471f;
+    --red-tint: #f7e5e0;
+    --line: #dcd6d0;
+    --line-dark: #3a3634;
+    --sans: 'Archivo', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--body);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 800;
+    letter-spacing: -.035em;
+    line-height: .98;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: clamp(3rem, 8.2vw, 7rem);
+    letter-spacing: -.05em;
+}
+
+h2 {
+    font-size: clamp(2rem, 4.6vw, 3.4rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 2vw, 1.55rem);
+    letter-spacing: -.02em;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+a {
+    color: var(--red);
+}
+
+img {
+    max-width: 100%;
+}
+
+:focus-visible {
+    outline: 3px solid var(--red);
+    outline-offset: 3px;
+}
+
+.wrap {
+    width: min(1240px, calc(100% - var(--gutter) * 2));
+    margin-inline: auto;
+}
+
+.skip-link {
+    position: absolute;
+    z-index: 60;
+    top: 0;
+    left: 50%;
+    padding: 12px 22px;
+    background: var(--red);
+    color: var(--white);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform: translate(-50%, -140%);
+}
+
+.skip-link:focus {
+    transform: translate(-50%, 0);
+}
+
+.label {
+    display: block;
+    margin-bottom: 18px;
+    color: var(--red);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+}
+
+.icon {
+    flex: 0 0 auto;
+    width: 24px;
+    height: 24px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* --- kopbalk -------------------------------------------------------------- */
+
+.masthead {
+    position: sticky;
+    z-index: 50;
+    top: 0;
+    background: var(--ink);
+    color: var(--white);
+}
+
+.masthead .wrap {
+    display: flex;
+    align-items: stretch;
+    gap: 18px;
+    min-height: 72px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 13px;
+    margin-right: auto;
+    color: var(--white);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: .01em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.brand-mark {
+    display: grid;
+    flex: 0 0 auto;
+    width: 32px;
+    height: 32px;
+    place-items: center;
+    background: var(--red-bright);
+    color: var(--white);
+}
+
+.brand-mark .icon {
+    width: 20px;
+    height: 20px;
+    stroke-width: 2.6;
+}
+
+.nav {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+}
+
+.nav a {
+    display: flex;
+    align-items: center;
+    padding: 0 18px;
+    color: var(--white);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav a:hover {
+    background: var(--ink-soft);
+    color: var(--white);
+}
+
+.nav a[aria-current="page"] {
+    box-shadow: inset 0 -4px 0 var(--red-bright);
+}
+
+.nav .cta-link {
+    background: var(--red);
+    color: var(--white);
+}
+
+.nav .cta-link:hover {
+    background: var(--red-bright);
+}
+
+.nav .cta-link .icon {
+    width: 17px;
+    height: 17px;
+    margin-right: 9px;
+}
+
+.masthead :focus-visible {
+    outline-color: var(--white);
+    outline-offset: -4px;
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    gap: 10px;
+    padding: 0 4px 0 14px;
+    border: 0;
+    background: transparent;
+    color: var(--white);
+    font: inherit;
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+/* --- knoppen -------------------------------------------------------------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 52px;
+    padding: 14px 24px;
+    border: 2px solid var(--ink);
+    background: var(--ink);
+    color: var(--white);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-decoration: none;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: var(--red);
+    border-color: var(--red);
+    color: var(--white);
+}
+
+.btn .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--ink);
+}
+
+.btn-outline:hover {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--white);
+}
+
+.btn-on-dark {
+    border-color: var(--white);
+    background: var(--white);
+    color: var(--ink);
+}
+
+.btn-on-dark:hover {
+    background: var(--red-bright);
+    border-color: var(--red-bright);
+    color: var(--white);
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, .5);
+    background: transparent;
+    color: var(--white);
+}
+
+.btn-outline-light:hover {
+    background: var(--white);
+    border-color: var(--white);
+    color: var(--ink);
+}
+
+/* --- hero ----------------------------------------------------------------- */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 2px solid var(--ink);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -180px;
+    right: -180px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: var(--red-tint);
+}
+
+.hero .wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+    gap: clamp(30px, 5vw, 70px);
+    align-items: end;
+    padding: clamp(56px, 9vw, 116px) 0 clamp(40px, 6vw, 72px);
+}
+
+.hero h1 em {
+    font-style: normal;
+    color: var(--red);
+}
+
+.hero .lead {
+    max-width: 46ch;
+    margin: 34px 0 0;
+    font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 36px;
+}
+
+.hero-note {
+    margin: 16px 0 0;
+    font-size: .9rem;
+}
+
+/* Feitenblok naast de titel: dikke lijnen, grote cijfers. */
+.facts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-top: 2px solid var(--ink);
+}
+
+.facts li {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.facts .k {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0 0 6px;
+    color: var(--red);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.facts .k .icon {
+    width: 17px;
+    height: 17px;
+}
+
+.facts .v {
+    margin: 0;
+    color: var(--ink);
+    font-size: 1.28rem;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.25;
+}
+
+.facts .v a {
+    color: inherit;
+    text-decoration-color: var(--red);
+    text-underline-offset: 4px;
+    overflow-wrap: anywhere;
+}
+
+/* --- secties -------------------------------------------------------------- */
+
+.section {
+    padding: clamp(60px, 9vw, 110px) 0;
+}
+
+.section-dark {
+    background: var(--ink);
+    color: #b7b1ac;
+}
+
+.section-dark h2,
+.section-dark h3 {
+    color: var(--white);
+}
+
+.section-dark .label {
+    color: var(--red-bright);
+}
+
+.section-red {
+    background: var(--red);
+    color: var(--white);
+}
+
+.section-red h2,
+.section-red h3 {
+    color: var(--white);
+}
+
+.section-red .label {
+    color: var(--white);
+}
+
+.section-red :focus-visible,
+.section-dark :focus-visible {
+    outline-color: var(--white);
+}
+
+.section-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: clamp(24px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(36px, 5vw, 56px);
+    padding-bottom: 22px;
+    border-bottom: 2px solid currentColor;
+}
+
+.section-head p {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.page-head {
+    padding: clamp(46px, 7vw, 92px) 0 clamp(34px, 5vw, 56px);
+    border-bottom: 2px solid var(--ink);
+}
+
+.page-head .lead {
+    max-width: 52ch;
+    margin: 26px 0 0;
+    font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 26px;
+    color: var(--body);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.back-link:hover {
+    color: var(--red);
+}
+
+.back-link .icon {
+    width: 16px;
+    height: 16px;
+    transform: rotate(180deg);
+}
+
+/* --- genummerde lijst ----------------------------------------------------- */
+
+/* De rasterlijnen worden binnen elke cel getekend (inset), niet met gaten in
+   het raster. Zo blijft het raster kloppen bij elk aantal kolommen en laat een
+   onvolledige laatste rij geen lege blokken achter. */
+.numbered {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    gap: 0;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: n;
+    border-top: 2px solid var(--ink);
+}
+
+.numbered > li {
+    padding: 30px 30px 34px;
+    box-shadow: inset 0 -1px 0 var(--line), inset -1px 0 0 var(--line);
+}
+
+.numbered > li::before {
+    counter-increment: n;
+    content: counter(n, decimal-leading-zero);
+    display: block;
+    margin-bottom: 20px;
+    color: var(--red-bright);
+    font-size: 2.6rem;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    line-height: 1;
+}
+
+.numbered h3 {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 10px;
+}
+
+.numbered h3 .icon {
+    color: var(--red);
+}
+
+.numbered p {
+    margin: 0;
+    font-size: .98rem;
+}
+
+/* --- stappen -------------------------------------------------------------- */
+
+.steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+    border-top: 2px solid var(--ink);
+}
+
+.steps > li {
+    display: grid;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: clamp(20px, 3vw, 44px);
+    padding: 34px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.steps .mark {
+    display: grid;
+    gap: 12px;
+    justify-items: start;
+    color: var(--red);
+}
+
+.steps .mark::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -.04em;
+    line-height: 1;
+    color: var(--red-bright);
+}
+
+.steps .mark .icon {
+    width: 28px;
+    height: 28px;
+}
+
+.steps h3 {
+    margin-bottom: 12px;
+    font-size: clamp(1.4rem, 2.6vw, 2rem);
+}
+
+.steps p {
+    max-width: 66ch;
+    margin: 0 0 12px;
+}
+
+.steps p:last-child {
+    margin-bottom: 0;
+}
+
+.steps ul {
+    max-width: 66ch;
+    margin: 14px 0 0;
+    padding-left: 20px;
+}
+
+.steps li li {
+    margin-bottom: 6px;
+}
+
+.steps ul li::marker {
+    color: var(--red-bright);
+}
+
+/* --- team ----------------------------------------------------------------- */
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2px;
+    background: var(--ink);
+    border: 2px solid var(--ink);
+}
+
+.person {
+    position: relative;
+    display: block;
+    background: var(--paper);
+    text-decoration: none;
+}
+
+.person img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    filter: grayscale(1) contrast(1.05);
+    transition: filter .45s ease;
+}
+
+.person:hover img,
+.person:focus-within img {
+    filter: none;
+}
+
+.person .meta {
+    padding: 18px 20px 22px;
+}
+
+.person .role {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--red);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.person h3 {
+    font-size: 1.3rem;
+}
+
+/* Uitgebreide voorstelling. */
+.bio {
+    display: grid;
+    grid-template-columns: minmax(0, 300px) minmax(0, 1fr);
+    gap: clamp(26px, 4vw, 64px);
+    padding: 44px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.bio:first-of-type {
+    border-top: 2px solid var(--ink);
+}
+
+.bio img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+}
+
+.bio h2 {
+    margin-bottom: 18px;
+    font-size: clamp(1.7rem, 3.4vw, 2.6rem);
+}
+
+.bio p {
+    max-width: 68ch;
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- informatieblokken ---------------------------------------------------- */
+
+.info-block {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: clamp(24px, 4vw, 70px);
+    padding: 40px 0;
+    border-bottom: 1px solid var(--line);
+}
+
+.info-block:first-of-type {
+    border-top: 2px solid var(--ink);
+}
+
+.info-block h2 {
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+}
+
+.info-block .sub {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 14px 0 0;
+    color: var(--red);
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.info-block .sub .icon {
+    width: 18px;
+    height: 18px;
+}
+
+.info-block .body {
+    max-width: 68ch;
+}
+
+.info-block .body p:last-child {
+    margin-bottom: 0;
+}
+
+.info-block .body strong {
+    color: var(--ink);
+}
+
+/* --- accentpaneel --------------------------------------------------------- */
+
+.alert-panel {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 26px;
+    padding: clamp(28px, 4vw, 46px);
+    background: var(--ink);
+    color: #cfc9c4;
+}
+
+.alert-panel .icon {
+    width: 42px;
+    height: 42px;
+    color: var(--red-bright);
+}
+
+.alert-panel h2 {
+    margin-bottom: 12px;
+    color: var(--white);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.alert-panel p {
+    margin: 0;
+    font-size: 1.05rem;
+}
+
+.alert-panel strong {
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: -.02em;
+}
+
+.note-panel {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 20px;
+    padding: 26px 28px;
+    background: var(--red-tint);
+    color: var(--ink);
+}
+
+.note-panel .icon {
+    width: 28px;
+    height: 28px;
+    color: var(--red);
+}
+
+.note-panel p {
+    margin: 0;
+}
+
+.status-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 22px;
+    border: 2px dashed var(--line-dark);
+    color: var(--ink);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.status-note .icon {
+    width: 19px;
+    height: 19px;
+    color: var(--red);
+}
+
+/* --- oproepbalk ----------------------------------------------------------- */
+
+.cta .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: clamp(26px, 4vw, 60px);
+    align-items: center;
+}
+
+.cta h2 {
+    font-size: clamp(2.1rem, 5vw, 3.6rem);
+}
+
+.cta p {
+    max-width: 48ch;
+    margin: 18px 0 0;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+/* --- voettekst ------------------------------------------------------------ */
+
+.site-footer {
+    padding: clamp(50px, 7vw, 80px) 0 28px;
+    background: var(--ink);
+    color: #a8a29d;
+    font-size: .95rem;
+}
+
+.site-footer a {
+    color: var(--white);
+    text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+    color: var(--red-bright);
+}
+
+.site-footer :focus-visible {
+    outline-color: var(--white);
+}
+
+.footer-word {
+    display: block;
+    margin-bottom: 34px;
+    color: var(--white);
+    font-size: clamp(3rem, 12vw, 9rem);
+    font-weight: 800;
+    letter-spacing: -.05em;
+    line-height: .85;
+    text-transform: uppercase;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 34px;
+    padding-top: 30px;
+    border-top: 1px solid var(--line-dark);
+}
+
+.site-footer h2 {
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer li {
+    margin-bottom: 9px;
+}
+
+.site-footer address {
+    font-style: normal;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    justify-content: space-between;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line-dark);
+    font-size: .8rem;
+}
+
+/* Tijdelijk: keuzemenu tussen de ontwerpvoorstellen. */
+.style-options {
+    flex-basis: 100%;
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px dashed var(--line-dark);
+    font-size: .78rem;
+}
+
+.style-options a {
+    margin-right: 14px;
+}
+
+/* --- responsief ----------------------------------------------------------- */
+
+@media (max-width: 980px) {
+    .masthead .wrap {
+        position: relative;
+        align-items: center;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .nav {
+        position: absolute;
+        z-index: 40;
+        top: 100%;
+        left: calc(var(--gutter) * -1);
+        right: calc(var(--gutter) * -1);
+        display: none;
+        flex-direction: column;
+        background: var(--ink);
+        border-top: 1px solid var(--line-dark);
+    }
+
+    .nav.is-open {
+        display: flex;
+    }
+
+    .nav a {
+        min-height: 54px;
+        padding: 14px 30px;
+        border-bottom: 1px solid var(--line-dark);
+    }
+
+    .hero .wrap {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .section-head {
+        grid-template-columns: minmax(0, 1fr);
+        align-items: start;
+    }
+
+    .cta .wrap {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .info-block {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    :root {
+        --gutter: 20px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    /* Eén kolom: alleen nog een lijn onder elke cel. */
+    .numbered > li {
+        padding: 26px 0 30px;
+        box-shadow: inset 0 -1px 0 var(--line);
+    }
+
+    .section-dark .numbered > li {
+        box-shadow: inset 0 -1px 0 var(--line-dark);
+    }
+
+    .steps > li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+
+    .steps .mark {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+    }
+
+    .bio {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .bio img {
+        max-width: 280px;
+    }
+
+    .alert-panel,
+    .note-panel {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}
+
+/* Donkere variant van het genummerde raster en het feitenblok. */
+.section-dark .numbered {
+    border-top: 2px solid var(--white);
+}
+
+.section-dark .numbered > li {
+    box-shadow: inset 0 -1px 0 var(--line-dark), inset -1px 0 0 var(--line-dark);
+}
+
+.section-dark .numbered h3 .icon {
+    color: var(--red-bright);
+}
+
+.section-dark .numbered a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 16px;
+    color: var(--white);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.section-dark .numbered a:hover {
+    color: var(--red-bright);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
+.section-dark .numbered a .icon {
+    width: 16px;
+    height: 16px;
+}
+

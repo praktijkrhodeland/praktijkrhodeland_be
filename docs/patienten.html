@@ -24,6 +24,30 @@
             margin-bottom: 14px;
         }
 
+        /* The icon sits on the heading line and shares its colour. */
+        .section-heading h2 {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .section-heading h2 .icon-chip {
+            width: 46px;
+            height: 46px;
+        }
+
+        .urgent-note h2 {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .urgent-note h2 .icon {
+            width: 34px;
+            height: 34px;
+            color: var(--coral);
+        }
+
         .urgent-note h2 {
             margin: 0 0 14px;
             font-size: clamp(2rem, 4vw, 3.2rem);
@@ -119,14 +143,14 @@
 
         <section class="urgent-note" aria-labelledby="wachtdienst-title">
             <p class="section-label">Belangrijk om te weten</p>
-            <h2 id="wachtdienst-title">Dringende hulp buiten openingsuren</h2>
+            <h2 id="wachtdienst-title"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2 21.4 20H2.6z"/><path d="M12 9.4v4.6"/><circle cx="12" cy="17.2" r="1.05" fill="currentColor" stroke="none"/></svg><span>Dringende hulp buiten openingsuren</span></h2>
             <p>Vanaf 18u ’s avonds of in het weekend kunt u de huisartsenwachtdienst bereiken via
                 <strong>1733</strong>.</p>
         </section>
 
         <section class="info-section" aria-labelledby="openingsuren-title">
             <div class="section-heading">
-                <h2 id="openingsuren-title">Openingsuren</h2>
+                <h2 id="openingsuren-title"><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg></span><span>Openingsuren</span></h2>
                 <p>Consultaties enkel op afspraak</p>
             </div>
             <div class="info-body">
@@ -140,7 +164,7 @@
 
         <section class="info-section" aria-labelledby="huisbezoeken-title">
             <div class="section-heading">
-                <h2 id="huisbezoeken-title">Huisbezoeken</h2>
+                <h2 id="huisbezoeken-title"><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.4 12 3.1l9 7.3"/><path d="M5.5 9.2V20.4h13V9.2"/><path d="M9.9 20.4v-5.8h4.2v5.8"/></svg></span><span>Huisbezoeken</span></h2>
                 <p>Telefonisch aan te vragen</p>
             </div>
             <div class="info-body">
@@ -151,7 +175,7 @@
 
         <section class="info-section" aria-labelledby="voorschriften-title">
             <div class="section-heading">
-                <h2 id="voorschriften-title">Voorschriften</h2>
+                <h2 id="voorschriften-title"><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="5" y="3.6" width="14" height="16.8" rx="2.2"/><path d="M8.8 9.2h6.4M8.8 12.8h6.4M8.8 16.4h3.6"/></svg></span><span>Voorschriften</span></h2>
                 <p>Altijd op consultatie</p>
             </div>
             <div class="info-body">
@@ -162,7 +186,7 @@
 
         <section class="info-section" aria-labelledby="contact-title">
             <div class="section-heading">
-                <h2 id="contact-title">Contact &amp; route</h2>
+                <h2 id="contact-title"><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21.2s7-5.7 7-11a7 7 0 1 0-14 0c0 5.3 7 11 7 11z"/><circle cx="12" cy="10.1" r="2.6"/></svg></span><span>Contact &amp; route</span></h2>
                 <p>Zo bereikt u ons</p>
             </div>
             <div class="info-body">

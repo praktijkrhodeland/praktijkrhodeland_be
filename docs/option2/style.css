@@ -1,0 +1,1051 @@
+/* ===========================================================================
+   Optie 2 — "Helder & praktisch"
+   Een heldere, informatieve zorgsite: witte vlakken, duidelijke kaarten,
+   rode accenten en iconen. Alles staat in het teken van snel terugvinden
+   wat je zoekt.
+   =========================================================================== */
+
+:root {
+    --gutter: 28px;
+    --red: #b3261e;
+    --red-dark: #8f1e17;
+    --red-soft: #fdeeec;
+    --ink: #16232a;
+    --body: #53646d;
+    --white: #ffffff;
+    --tint: #f2f6f7;
+    --line: #dfe7ea;
+    --dark: #16232a;
+    --dark-soft: #24353e;
+    --dark-body: #a9bac2;
+    --red-on-dark: #f08674;
+    --radius: 14px;
+    --sans: 'Inter', system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--white);
+    color: var(--body);
+    font-family: var(--sans);
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3 {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.15;
+    overflow-wrap: break-word;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 5vw, 3.6rem);
+    letter-spacing: -.03em;
+}
+
+h2 {
+    font-size: clamp(1.7rem, 3.2vw, 2.5rem);
+}
+
+h3 {
+    font-size: 1.2rem;
+}
+
+p {
+    margin: 0 0 16px;
+}
+
+a {
+    color: var(--red);
+}
+
+a:hover {
+    color: var(--red-dark);
+}
+
+img {
+    max-width: 100%;
+}
+
+:focus-visible {
+    outline: 3px solid var(--ink);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.wrap {
+    width: min(1180px, calc(100% - var(--gutter) * 2));
+    margin-inline: auto;
+}
+
+.skip-link {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    left: 50%;
+    padding: 12px 20px;
+    background: var(--ink);
+    color: var(--white);
+    font-size: .85rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 0 0 8px 8px;
+    transform: translate(-50%, -140%);
+}
+
+.skip-link:focus {
+    transform: translate(-50%, 0);
+}
+
+/* --- iconen --------------------------------------------------------------- */
+
+.icon {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.7;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.icon-box {
+    display: grid;
+    flex: 0 0 auto;
+    width: 50px;
+    height: 50px;
+    place-items: center;
+    border-radius: 13px;
+    background: var(--red-soft);
+    color: var(--red);
+}
+
+.icon-box .icon {
+    width: 25px;
+    height: 25px;
+}
+
+/* --- bovenbalk met dringende info ----------------------------------------- */
+
+.utility {
+    background: var(--dark);
+    color: var(--dark-body);
+    font-size: .85rem;
+}
+
+.utility .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 6px 24px;
+    min-height: 44px;
+    padding: 7px 0;
+}
+
+.utility p {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+}
+
+.utility .icon {
+    width: 17px;
+    height: 17px;
+    color: var(--red-on-dark);
+}
+
+.utility strong {
+    color: var(--white);
+}
+
+.utility a {
+    color: var(--white);
+    text-underline-offset: 3px;
+}
+
+.utility a:focus-visible {
+    outline-color: var(--white);
+}
+
+/* --- kopbalk -------------------------------------------------------------- */
+
+/* De hele kopbalk (met de dringende info) blijft op grotere schermen staan;
+   op een telefoon zou dat te veel schermruimte innemen. */
+.site-header {
+    position: relative;
+    z-index: 40;
+}
+
+@media (min-width: 721px) {
+    .site-header {
+        position: sticky;
+        top: 0;
+    }
+}
+
+.masthead {
+    background: var(--white);
+    border-bottom: 1px solid var(--line);
+}
+
+.masthead .wrap {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    min-height: 78px;
+}
+
+.brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-right: auto;
+    color: var(--ink);
+    font-size: 1.22rem;
+    font-weight: 800;
+    letter-spacing: -.02em;
+    text-decoration: none;
+}
+
+.brand-mark {
+    display: grid;
+    flex: 0 0 auto;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 11px;
+    background: var(--red);
+    color: var(--white);
+}
+
+.brand-mark .icon {
+    width: 22px;
+    height: 22px;
+    stroke-width: 2.4;
+}
+
+.brand span small {
+    display: block;
+    color: var(--body);
+    font-size: .68rem;
+    font-weight: 500;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav a {
+    padding: 10px 14px;
+    border-radius: 9px;
+    color: var(--ink);
+    font-size: .95rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav a:hover {
+    background: var(--tint);
+    color: var(--red);
+}
+
+.nav a[aria-current="page"] {
+    color: var(--red);
+    box-shadow: inset 0 -3px 0 var(--red);
+    border-radius: 9px 9px 0 0;
+}
+
+/* De knop in de navigatie is wit op rood; zonder deze regel wint de
+   algemenere ".nav a" met de donkere tekstkleur. */
+.nav .btn-primary,
+.nav .btn-primary:hover {
+    color: var(--white);
+}
+
+.menu-toggle {
+    display: none;
+    align-items: center;
+    gap: 9px;
+    min-height: 44px;
+    padding: 0 14px;
+    border: 1px solid var(--line);
+    border-radius: 9px;
+    background: var(--white);
+    color: var(--ink);
+    font: inherit;
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.menu-toggle .icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* --- knoppen -------------------------------------------------------------- */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    min-height: 48px;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: .96rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn .icon {
+    width: 19px;
+    height: 19px;
+}
+
+.btn-primary {
+    background: var(--red);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background: var(--red-dark);
+    color: var(--white);
+}
+
+.btn-ghost {
+    border-color: var(--line);
+    background: var(--white);
+    color: var(--ink);
+}
+
+.btn-ghost:hover {
+    border-color: var(--ink);
+    color: var(--ink);
+}
+
+.btn-light {
+    background: var(--white);
+    color: var(--red);
+}
+
+.btn-light:hover {
+    background: var(--tint);
+    color: var(--red-dark);
+}
+
+.btn-outline-light {
+    border-color: rgba(255, 255, 255, .55);
+    color: var(--white);
+}
+
+.btn-outline-light:hover {
+    background: rgba(255, 255, 255, .12);
+    color: var(--white);
+}
+
+.on-red :focus-visible {
+    outline-color: var(--white);
+}
+
+/* --- hero ----------------------------------------------------------------- */
+
+.hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--tint);
+    border-bottom: 1px solid var(--line);
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: -140px;
+    right: -120px;
+    width: 460px;
+    height: 460px;
+    border-radius: 50%;
+    background: var(--red-soft);
+    opacity: .85;
+}
+
+.hero .wrap {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 64px);
+    padding: clamp(48px, 7vw, 82px) 0;
+}
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 20px;
+    padding: 7px 15px 7px 11px;
+    border-radius: 999px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    color: var(--red);
+    font-size: .82rem;
+    font-weight: 600;
+}
+
+.pill .icon {
+    width: 17px;
+    height: 17px;
+}
+
+.lead {
+    max-width: 44ch;
+    margin: 20px 0 0;
+    font-size: 1.12rem;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+.hero-note {
+    margin: 16px 0 0;
+    font-size: .9rem;
+}
+
+/* De kaart met de praktische gegevens naast de titel. */
+.hero-card {
+    padding: 26px 28px 28px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    box-shadow: 0 22px 45px rgba(22, 35, 42, .09);
+}
+
+.hero-card h2 {
+    font-size: 1.15rem;
+}
+
+.hero-card > h2 {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--line);
+}
+
+.hero-card > h2 .icon {
+    color: var(--red);
+}
+
+.hours {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.hours li {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 4px 16px;
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: .94rem;
+}
+
+.hours dt,
+.hours .hours-label {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.hours dd,
+.hours .hours-value {
+    margin: 0;
+    text-align: right;
+}
+
+.hero-card .card-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 11px;
+    margin: 18px 0 0;
+    padding: 14px 15px;
+    border-radius: 11px;
+    background: var(--red-soft);
+    color: var(--ink);
+    font-size: .88rem;
+    line-height: 1.5;
+}
+
+.hero-card .card-note .icon {
+    width: 19px;
+    height: 19px;
+    margin-top: 2px;
+    color: var(--red);
+}
+
+/* --- secties -------------------------------------------------------------- */
+
+.section {
+    padding: clamp(56px, 8vw, 92px) 0;
+}
+
+.section-tint {
+    background: var(--tint);
+}
+
+.section-head {
+    max-width: 56ch;
+    margin-bottom: 38px;
+}
+
+.section-head .eyebrow {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--red);
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.section-head p {
+    margin: 14px 0 0;
+}
+
+.page-head {
+    padding: clamp(40px, 6vw, 60px) 0 clamp(32px, 5vw, 48px);
+    background: var(--tint);
+    border-bottom: 1px solid var(--line);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 18px;
+    color: var(--body);
+    font-size: .9rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.back-link:hover {
+    color: var(--red);
+}
+
+.back-link .icon {
+    width: 17px;
+    height: 17px;
+    transform: rotate(180deg);
+}
+
+/* --- kaartenraster -------------------------------------------------------- */
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    padding: 26px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.card h3 {
+    margin: 18px 0 8px;
+}
+
+.card p {
+    margin: 0;
+    font-size: .96rem;
+}
+
+.card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: .92rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.card-link .icon {
+    width: 17px;
+    height: 17px;
+}
+
+/* --- team ----------------------------------------------------------------- */
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 22px;
+}
+
+.person {
+    text-align: center;
+}
+
+.person img {
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    margin: 0 auto 18px;
+    aspect-ratio: 1;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid var(--white);
+    box-shadow: 0 14px 30px rgba(22, 35, 42, .12);
+}
+
+.person .role {
+    display: block;
+    margin-top: 6px;
+    color: var(--red);
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+}
+
+/* Uitgebreide voorstelling op de teampagina. */
+.bio {
+    display: grid;
+    grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+    gap: clamp(26px, 4vw, 52px);
+    padding: 34px 0;
+    border-top: 1px solid var(--line);
+}
+
+.bio:first-of-type {
+    border-top: 0;
+}
+
+.bio img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    border-radius: var(--radius);
+}
+
+.bio .role {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--red);
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.bio h2 {
+    margin-bottom: 14px;
+    font-size: clamp(1.5rem, 2.6vw, 2rem);
+}
+
+.bio p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- stappen op de consultatiepagina -------------------------------------- */
+
+.steps {
+    display: grid;
+    gap: 16px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: step;
+}
+
+.steps > li {
+    display: grid;
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 22px;
+    padding: 26px;
+    background: var(--white);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+}
+
+.steps h3 {
+    margin: 0 0 8px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+}
+
+.steps h3::before {
+    counter-increment: step;
+    content: counter(step, decimal-leading-zero);
+    color: var(--red);
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.steps p {
+    margin: 0;
+    font-size: .98rem;
+}
+
+.steps ul {
+    margin: 12px 0 0;
+    padding-left: 20px;
+    font-size: .98rem;
+}
+
+.steps ul li {
+    margin-bottom: 5px;
+}
+
+.steps ul li::marker {
+    color: var(--red);
+}
+
+/* --- info blokken --------------------------------------------------------- */
+
+.info-block {
+    padding: 30px 0;
+    border-top: 1px solid var(--line);
+}
+
+.info-block:first-of-type {
+    border-top: 0;
+    padding-top: 0;
+}
+
+.info-block h2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    font-size: clamp(1.4rem, 2.6vw, 1.9rem);
+}
+
+.info-block .sub {
+    margin: 6px 0 16px 64px;
+    color: var(--red);
+    font-size: .82rem;
+    font-weight: 600;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.info-block .body {
+    max-width: 68ch;
+    margin-left: 64px;
+}
+
+.info-block .body p:last-child {
+    margin-bottom: 0;
+}
+
+.info-block .body strong {
+    color: var(--ink);
+}
+
+/* --- waarschuwing --------------------------------------------------------- */
+
+.alert-panel {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 24px 26px;
+    background: var(--red-soft);
+    border: 1px solid #f3cfc9;
+    border-left: 5px solid var(--red);
+    border-radius: var(--radius);
+}
+
+.alert-panel .icon {
+    width: 28px;
+    height: 28px;
+    margin-top: 2px;
+    color: var(--red);
+}
+
+.alert-panel h2 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.alert-panel p {
+    margin: 0;
+    color: var(--ink);
+}
+
+.alert-panel strong {
+    font-size: 1.1rem;
+}
+
+/* --- oproepbalk ----------------------------------------------------------- */
+
+.cta {
+    padding: clamp(46px, 6vw, 68px) 0;
+    background: var(--red);
+    color: var(--white);
+}
+
+.cta h2,
+.cta p {
+    color: var(--white);
+}
+
+.cta .wrap {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+}
+
+.cta p {
+    max-width: 46ch;
+    margin: 12px 0 0;
+    opacity: .92;
+}
+
+.cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.status-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 18px;
+    border: 2px dashed var(--line);
+    border-radius: 10px;
+    color: var(--ink);
+    font-size: .92rem;
+    font-weight: 600;
+}
+
+.status-note .icon {
+    width: 19px;
+    height: 19px;
+    color: var(--red);
+}
+
+/* --- voettekst ------------------------------------------------------------ */
+
+.site-footer {
+    padding: clamp(44px, 6vw, 64px) 0 26px;
+    background: var(--dark);
+    color: var(--dark-body);
+    font-size: .93rem;
+}
+
+.site-footer h2 {
+    margin-bottom: 14px;
+    color: var(--white);
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    gap: 34px;
+}
+
+.site-footer a {
+    color: var(--white);
+    text-underline-offset: 3px;
+}
+
+.site-footer a:hover {
+    color: var(--red-on-dark);
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.site-footer li {
+    margin-bottom: 9px;
+}
+
+.site-footer address {
+    font-style: normal;
+}
+
+.site-footer .brand {
+    color: var(--white);
+    margin: 0 0 14px;
+}
+
+.site-footer :focus-visible {
+    outline-color: var(--white);
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    justify-content: space-between;
+    margin-top: 38px;
+    padding-top: 20px;
+    border-top: 1px solid var(--dark-soft);
+    font-size: .82rem;
+}
+
+/* Tijdelijk: keuzemenu tussen de ontwerpvoorstellen. */
+.style-options {
+    flex-basis: 100%;
+    margin: 0;
+    padding-top: 12px;
+    border-top: 1px dashed var(--dark-soft);
+    font-size: .8rem;
+}
+
+.style-options a {
+    margin-right: 14px;
+}
+
+/* --- responsief ----------------------------------------------------------- */
+
+@media (max-width: 940px) {
+    .masthead .wrap {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: inline-flex;
+    }
+
+    .nav {
+        position: absolute;
+        z-index: 30;
+        top: 100%;
+        left: calc(var(--gutter) * -1);
+        right: calc(var(--gutter) * -1);
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px 14px 16px;
+        background: var(--white);
+        border-bottom: 1px solid var(--line);
+        box-shadow: 0 18px 30px rgba(22, 35, 42, .12);
+    }
+
+    .nav.is-open {
+        display: flex;
+    }
+
+    .nav a {
+        display: flex;
+        align-items: center;
+        min-height: 50px;
+        border-bottom: 1px solid var(--line);
+        border-radius: 0;
+    }
+
+    .nav a[aria-current="page"] {
+        box-shadow: none;
+        border-radius: 0;
+    }
+
+    .nav .btn {
+        justify-content: center;
+        margin-top: 12px;
+        border-bottom: 0;
+    }
+
+    .hero .wrap {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 720px) {
+    :root {
+        --gutter: 20px;
+    }
+
+    body {
+        font-size: 16px;
+    }
+
+    .bio {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .bio img {
+        max-width: 260px;
+    }
+
+    .steps > li {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .info-block .sub,
+    .info-block .body {
+        margin-left: 0;
+    }
+
+    .hours li {
+        flex-direction: column;
+    }
+
+    .hours dd,
+    .hours .hours-value {
+        text-align: left;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: .01ms !important;
+        animation-duration: .01ms !important;
+    }
+}

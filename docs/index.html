@@ -67,7 +67,7 @@
 
         .hero {
             display: grid;
-            grid-template-columns: minmax(0, 760px);
+            grid-template-columns: minmax(0, 1.05fr) minmax(290px, .95fr);
             align-items: center;
             gap: clamp(50px, 9vw, 130px);
             min-height: 650px;
@@ -98,7 +98,8 @@
         }
 
         .appointment {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
             margin-top: 34px;
             padding: 16px 22px;
             background: var(--coral);
@@ -140,7 +141,6 @@
             border-radius: 50%;
             background: var(--mint);
             color: var(--ink);
-            font-size: 1.1rem;
         }
 
         .notice p {
@@ -229,6 +229,10 @@
             letter-spacing: .03em;
         }
 
+        .quick-facts {
+            margin-top: 10px;
+        }
+
         .content-section {
             padding: 100px 0 0;
         }
@@ -273,12 +277,23 @@
             color: var(--ink);
         }
 
-        .service-list li::before {
-            content: '+';
-            display: inline-block;
-            width: 28px;
+        .service-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .service-list li .icon {
+            width: 22px;
+            height: 22px;
+            margin-top: 3px;
             color: var(--coral);
-            font-weight: 700;
+        }
+
+        .info-list li {
+            display: flex;
+            align-items: center;
+            gap: 18px;
         }
 
         .info-list strong {
@@ -486,15 +501,47 @@
                     kijken ernaar uit u te mogen verwelkomen.</p>
                 <p class="intro">We streven naar kwalitatieve, wetenschappelijke, toegankelijke en warme zorg, met
                     een respectvolle en persoonlijke arts-patiëntrelatie als basis.</p>
-                <a class="appointment" href="consultaties.html">Maak een afspraak</a>
+                <a class="appointment" href="consultaties.html"><svg class="icon btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>Maak een afspraak</a>
                 <p class="appointment-note">Lees eerst de informatie over consultaties.</p>
                 <div class="notice">
-                    <span class="notice-icon" aria-hidden="true">i</span>
+                    <span class="notice-icon" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11.2v5"/><circle cx="12" cy="7.8" r="1.05" fill="currentColor" stroke="none"/></svg></span>
                     <p><strong>Telefonisch bereikbaar</strong>Het telefoonnummer is nog niet gekend. We maken dit
                         binnenkort bekend.</p>
                 </div>
                 </div>
+                <div class="visual">
+                    <div class="card">
+                        <p class="card-label">Nieuwe praktijk</p>
+                        <h2>We openen begin november</h2>
+                        <div class="card-rule"></div>
+                        <p class="card-foot">Merelbeke-Melle</p>
+                    </div>
+                </div>
             </section>
+
+            <ul class="quick-facts">
+                <li>
+                    <span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg></span>
+                    <div>
+                        <p class="fact-label">Openingsuren</p>
+                        <p class="fact-value">Maandag tot vrijdag, 08u00 &ndash; 18u00</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2 21.4 20H2.6z"/><path d="M12 9.4v4.6"/><circle cx="12" cy="17.2" r="1.05" fill="currentColor" stroke="none"/></svg></span>
+                    <div>
+                        <p class="fact-label">Dringende hulp</p>
+                        <p class="fact-value">Na 18u en in het weekend: bel 1733</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="2.6" y="4.8" width="18.8" height="14.4" rx="2.4"/><path d="m3.4 6.4 8.6 6.2 8.6-6.2"/></svg></span>
+                    <div>
+                        <p class="fact-label">E-mail</p>
+                        <p class="fact-value"><a class="location-link" href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a></p>
+                    </div>
+                </li>
+            </ul>
 
             <section class="content-section" id="over-ons" aria-labelledby="over-ons-title">
                 <div class="content-grid">
@@ -510,7 +557,7 @@
                             </span>
                             <p>Groepsfoto volgt binnenkort</p>
                         </div>
-                        <a class="appointment" href="team.html">Maak kennis met ons team</a>
+                        <a class="appointment" href="team.html"><svg class="icon btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.6 19.5a6.4 6.4 0 0 1 12.8 0"/><path d="M16.4 5.3a3.4 3.4 0 0 1 0 6.4"/><path d="M17.8 14.8a6.4 6.4 0 0 1 3.6 4.7"/></svg>Maak kennis met ons team</a>
                     </div>
                 </div>
             </section>
@@ -522,13 +569,13 @@
                         <p>U kunt bij ons terecht vanaf de geboorte tot het levenseinde. We bieden hoogstaande zorg,
                             telkens met aandacht voor uw noden als patiënt.</p>
                         <ul class="service-list">
-                            <li>Consultaties bij acute infecties, ook voor baby’s en jonge kinderen</li>
-                            <li>Opvolging van chronische aandoeningen zoals diabetes en hartfalen</li>
-                            <li>Preventieve onderzoeken, uitstrijkjes, vaccinatiecontrole en jaarlijkse bloedafnames</li>
-                            <li>Cryotherapie voor wratjes</li>
-                            <li>Begeleiding bij rookstop</li>
-                            <li>Psychologische ondersteuning wanneer het even moeilijker gaat</li>
-                            <li>Gesprekken over het levenseinde en palliatieve zorg</li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 14.6V5a2 2 0 1 0-4 0v9.6a4.5 4.5 0 1 0 4 0z"/><path d="M12 12.4v4.2"/></svg><span>Consultaties bij acute infecties, ook voor baby’s en jonge kinderen</span></li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M2.5 12h4l2-5 3.5 10 2.5-7 1.6 2h5.4"/></svg><span>Opvolging van chronische aandoeningen zoals diabetes en hartfalen</span></li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 3.2 20 6.1v5.6c0 4.3-3.1 7.4-8 8.9-4.9-1.5-8-4.6-8-8.9V6.1z"/><path d="m8.9 11.9 2.2 2.2 4.1-4.2"/></svg><span>Preventieve onderzoeken, uitstrijkjes, vaccinatiecontrole en jaarlijkse bloedafnames</span></li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2.8v18.4"/><path d="m4.2 7.4 15.6 9.2"/><path d="M19.8 7.4 4.2 16.6"/><path d="m9.2 4.6 2.8 2.2 2.8-2.2"/><path d="m9.2 19.4 2.8-2.2 2.8 2.2"/></svg><span>Cryotherapie voor wratjes</span></li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 7.6h8.8a3 3 0 1 0-3-3"/><path d="M3 12.2h12.6a3 3 0 1 1-3 3"/><path d="M3 16.8h6.2"/></svg><span>Begeleiding bij rookstop</span></li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 11.6a8 8 0 0 1-8 8H4.4l2-3.4A8 8 0 1 1 21 11.6z"/><path d="M9 10.4h6M9 13.8h4"/></svg><span>Psychologische ondersteuning wanneer het even moeilijker gaat</span></li>
+                            <li><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.4 5.1a5 5 0 0 0-7.1 0L12 6.4l-1.3-1.3a5 5 0 1 0-7.1 7.1L12 20.6l8.4-8.4a5 5 0 0 0 0-7.1z"/></svg><span>Gesprekken over het levenseinde en palliatieve zorg</span></li>
                         </ul>
                         <p class="support-note"><strong>Onze praktijkverpleegkundige Katinka</strong> ondersteunt het
                             team onder andere met zorgprotocollen, preventieprojecten, vaccinatiecampagnes, ... U kunt
@@ -542,13 +589,12 @@
                     <h2 id="praktisch-title">Praktische informatie</h2>
                     <div class="content-copy">
                         <ul class="info-list">
-                            <li><strong>Openingsuren praktijk</strong><span>Maandag tot vrijdag: 08u00 – 18u00.</span></li>
-                            <li><strong>Openingsuren secretariaat</strong><span>Maandag tot vrijdag: 08u00 – 12u00.</span></li>
-                            <li><strong>Dringende hulp</strong><span>Vanaf 18u of in het weekend: bel 1733.</span></li>
-                            <li><strong>Huisbezoeken</strong><span>Telefonisch aan te vragen en enkel mogelijk in
-                                Merelbeke.</span></li>
+                            <li><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 7v5.2l3.4 2"/></svg></span><span><strong>Openingsuren praktijk</strong><span>Maandag tot vrijdag: 08u00 – 18u00.</span></span></li>
+                            <li><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></span><span><strong>Openingsuren secretariaat</strong><span>Maandag tot vrijdag: 08u00 – 12u00.</span></span></li>
+                            <li><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21.4 16.9v2.5a1.7 1.7 0 0 1-1.9 1.7 16.8 16.8 0 0 1-7.3-2.6 16.5 16.5 0 0 1-5.1-5.1A16.8 16.8 0 0 1 4.5 6a1.7 1.7 0 0 1 1.7-1.9h2.5a1.7 1.7 0 0 1 1.7 1.5c.1.8.3 1.6.6 2.4a1.7 1.7 0 0 1-.4 1.8l-1 1.1a13.5 13.5 0 0 0 5.1 5.1l1.1-1a1.7 1.7 0 0 1 1.8-.4c.8.3 1.6.5 2.4.6a1.7 1.7 0 0 1 1.4 1.7z"/></svg></span><span><strong>Dringende hulp</strong><span>Vanaf 18u of in het weekend: bel 1733.</span></span></li>
+                            <li><span class="icon-chip" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M3 10.4 12 3.1l9 7.3"/><path d="M5.5 9.2V20.4h13V9.2"/><path d="M9.9 20.4v-5.8h4.2v5.8"/></svg></span><span><strong>Huisbezoeken</strong><span>Telefonisch aan te vragen en enkel mogelijk in Merelbeke.</span></span></li>
                         </ul>
-                        <a class="appointment" href="patienten.html">Bekijk alle praktische informatie</a>
+                        <a class="appointment" href="patienten.html"><svg class="icon btn-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>Bekijk alle praktische informatie</a>
                     </div>
                 </div>
             </section>
@@ -562,6 +608,14 @@
                 <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
                 · Adres en telefoonnummer volgen binnenkort
             </address>
+            <!-- TIJDELIJK: links naar de andere ontwerpvoorstellen. Verwijder dit
+                 blok (en .style-options in common.css) zodra er een stijl gekozen is. -->
+            <p class="style-options">Ontwerpvoorstellen:
+                <a href="index.html">1. Huidige stijl</a>
+                <a href="option2/index.html">2. Helder &amp; praktisch</a>
+                <a href="option3/index.html">3. Modern &amp; krachtig</a>
+                <a href="option4/index.html">4. Warm &amp; menselijk</a>
+            </p>
         </footer>
     </div>
     <script src="menu.js"></script>
