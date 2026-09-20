@@ -11,15 +11,25 @@
 </head>
 
 <body>
-    <header class="topbar"><a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
-                aria-hidden="true">+</span>Rhodeland</a><button class="menu-toggle" type="button" aria-expanded="false"
-                aria-controls="main-menu" aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button><nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie"><a
-                href="consultaties.html">Consultaties</a><a href="team.html">Wie zijn wij?</a><a
-                href="index.html#zorg">Wat doen wij?</a><a href="patienten.html">Praktische info</a><a href="index.html#waar">Contact &amp; route</a><a class="nav-appointment" href="consultaties.html">Maak een afspraak</a></nav><span
-            class="location">Merelbeke · België</span></header>
-    <main><a class="back-link" href="team.html">← Terug naar ons team</a>
+    <a class="skip-link" href="#main">Ga naar de hoofdinhoud</a>
+    <header class="topbar">
+        <a class="brand" href="index.html" aria-label="Rhodeland home">
+            <span class="brand-mark" aria-hidden="true">+</span>
+            Rhodeland
+        </a>
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
+            aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
+        <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
+            <a href="consultaties.html">Consultaties</a>
+            <a href="team.html" aria-current="page">Team</a>
+            <a href="patienten.html">Praktische info</a>
+            <a class="nav-appointment" href="consultaties.html">Maak een afspraak</a>
+        </nav>
+        <span class="location">Merelbeke-Melle · België</span>
+    </header>
+    <main id="main" tabindex="-1"><a class="back-link" href="team.html">← Terug naar ons team</a>
         <section class="profile-intro" aria-labelledby="profile-title">
-            <img class="person-photo" src="images/Kristien.jpeg" alt="Kristien, secretaresse" style="width: 100%; max-width: 350px; aspect-ratio: 4 / 5; object-fit: cover; background: var(--mint); border: 1px solid var(--line);">
+            <img class="profile-photo" src="images/Kristien.jpeg" alt="Kristien, secretaresse">
             <div>
                 <p class="profile-role">Secretaresse</p>
                 <h1 id="profile-title">Kristien</h1>
@@ -30,7 +40,14 @@
             </div>
         </section>
     </main>
-    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke · België</span></footer>
+    <footer>
+        <span>Rhodeland huisartsenpraktijk</span>
+        <span>Merelbeke-Melle · België</span>
+        <address>
+            <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
+            · Adres en telefoonnummer volgen binnenkort
+        </address>
+    </footer>
     <script src="menu.js"></script>
 </body>
 

@@ -13,11 +13,6 @@
             max-width: 720px;
         }
 
-        .consultation-eyebrow {
-            font-size: clamp(1rem, 1.8vw, 1.35rem);
-            letter-spacing: .1em;
-        }
-
         .consultation-section {
             max-width: 920px;
             margin-top: 78px;
@@ -48,7 +43,7 @@
             letter-spacing: .1em;
         }
 
-        .consultation-item h2 {
+        .consultation-item h3 {
             margin: -5px 0 10px;
             font-size: clamp(1.7rem, 3vw, 2.4rem);
             line-height: 1.05;
@@ -88,30 +83,19 @@
             line-height: 1.65;
         }
 
-        .appointment-link {
+        /* Not a button: the agenda does not exist yet, so this is a plain
+           status message rather than a control that cannot be used. */
+        .booking-action .booking-status {
             display: inline-block;
-            padding: 16px 22px;
-            background: var(--coral);
-            color: var(--white);
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: .1em;
+            margin: 0;
+            padding: 15px 21px;
+            border: 2px dashed var(--line-strong);
             border-radius: 8px;
-            text-decoration: none;
+            color: var(--ink);
+            font-size: .82rem;
+            font-weight: 700;
+            letter-spacing: .06em;
             text-transform: uppercase;
-        }
-
-        .appointment-link:hover {
-            background: var(--ink);
-        }
-
-        .appointment-link.is-disabled {
-            background: var(--muted);
-            cursor: default;
-        }
-
-        .appointment-link.is-disabled:hover {
-            background: var(--muted);
         }
 
         @media (max-width: 720px) {
@@ -134,25 +118,27 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Ga naar de hoofdinhoud</a>
     <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
-                aria-hidden="true">+</span>Rhodeland</a>
+        <a class="brand" href="index.html" aria-label="Rhodeland home">
+            <span class="brand-mark" aria-hidden="true">+</span>
+            Rhodeland
+        </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
             aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
         <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
-            <a href="consultaties.html">Consultaties</a>
-            <a href="team.html">Wie zijn wij?</a>
-            <a href="index.html#zorg">Wat doen wij?</a>
+            <a href="consultaties.html" aria-current="page">Consultaties</a>
+            <a href="team.html">Team</a>
             <a href="patienten.html">Praktische info</a>
-            <a href="index.html#waar">Contact &amp; route</a>
             <a class="nav-appointment" href="consultaties.html">Maak een afspraak</a>
         </nav>
         <span class="location">Merelbeke-Melle · België</span>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <a class="back-link" href="index.html">← Terug naar home</a>
-        <p class="eyebrow consultation-eyebrow">Voor u een afspraak maakt</p>
+        <p class="eyebrow">Voor u een afspraak maakt</p>
+        <h1>Consul<em>taties.</em></h1>
         <p class="lead consultation-intro">Lees deze informatie vóór u een afspraak maakt. Zo kunnen we voor elke patiënt
             voldoende tijd voorzien en u naar de juiste zorgverlener begeleiden.</p>
 
@@ -165,14 +151,14 @@
                 <li class="consultation-item">
                     <span class="consultation-number" aria-hidden="true">01</span>
                     <div>
-                        <h2>Eén afspraak = één persoon</h2>
+                        <h3>Eén afspraak = één persoon</h3>
                         <p>Maak voor elke patiënt een afzonderlijke afspraak.</p>
                     </div>
                 </li>
                 <li class="consultation-item">
                     <span class="consultation-number" aria-hidden="true">02</span>
                     <div>
-                        <h2>Langere consultaties</h2>
+                        <h3>Langere consultaties</h3>
                         <p>Voor uitstrijkjes, pre-operatieve onderzoeken, ECG’s of elk consult dat meer tijd vraagt, gelieve
                             telefonisch te bellen. We voorzien dan extra tijd.</p>
                     </div>
@@ -180,7 +166,7 @@
                 <li class="consultation-item">
                     <span class="consultation-number" aria-hidden="true">03</span>
                     <div>
-                        <h2>Dringende afspraken</h2>
+                        <h3>Dringende afspraken</h3>
                         <p>Ook wanneer u online geen vrije afspraak meer ziet, kunt u voor een medisch urgente vraag bij een
                             arts terecht. Het telefoonnummer is nog niet gekend. We maken dit binnenkort bekend.</p>
                     </div>
@@ -188,7 +174,7 @@
                 <li class="consultation-item">
                     <span class="consultation-number" aria-hidden="true">04</span>
                     <div>
-                        <h2>Onze praktijkverpleegkundige</h2>
+                        <h3>Onze praktijkverpleegkundige</h3>
                         <p>U kunt online bij Katinka inboeken voor onder meer:</p>
                         <ul>
                             <li>ECG (hartfilm)</li>
@@ -201,6 +187,13 @@
                         </ul>
                     </div>
                 </li>
+                <li class="consultation-item">
+                    <span class="consultation-number" aria-hidden="true">05</span>
+                    <div>
+                        <h3>Mee te nemen</h3>
+                        <p>Breng uw identiteitskaart en een recente medicatiefiche mee naar uw afspraak.</p>
+                    </div>
+                </li>
             </ol>
         </section>
 
@@ -208,11 +201,18 @@
             <p class="section-label">Afspraak maken</p>
             <h2 id="booking-title">Klaar om een afspraak te boeken?</h2>
             <p>De agenda is momenteel nog niet beschikbaar. Binnenkort zullen patiënten hier wel een afspraak kunnen inboeken.</p>
-            <span class="appointment-link is-disabled" aria-disabled="true">Agenda binnenkort beschikbaar</span>
+            <p class="booking-status">Agenda binnenkort beschikbaar</p>
         </section>
     </main>
 
-    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke-Melle · België</span></footer>
+    <footer>
+        <span>Rhodeland huisartsenpraktijk</span>
+        <span>Merelbeke-Melle · België</span>
+        <address>
+            <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
+            · Adres en telefoonnummer volgen binnenkort
+        </address>
+    </footer>
     <script src="menu.js"></script>
 </body>
 

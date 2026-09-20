@@ -9,28 +9,15 @@
     <title>Praktische informatie | Rhodeland</title>
     <link rel="stylesheet" href="common.css">
     <style>
+        /* The wachtdienst call-out. No badge or icon: the mint panel and the
+           heading already set it apart from the rest of the page. */
         .urgent-note {
-            display: grid;
-            grid-template-columns: 150px 1fr;
-            gap: clamp(28px, 5vw, 70px);
-            align-items: center;
             max-width: 880px;
             margin-top: 78px;
             padding: 34px 38px;
             background: var(--mint);
             border: 1px solid rgba(23, 61, 55, .1);
-        }
-
-        .urgent-mark {
-            display: grid;
-            aspect-ratio: 1;
-            place-items: center;
-            border: 1px solid rgba(23, 61, 55, .28);
-            border-radius: 50%;
-            color: var(--ink);
-            font-family: var(--display);
-            font-size: 1.8rem;
-            transform: rotate(-8deg);
+            border-left: 4px solid var(--coral);
         }
 
         .urgent-note .section-label {
@@ -59,160 +46,149 @@
             color: var(--ink);
         }
 
-        .updates {
+        .info-section {
             max-width: 920px;
-            margin-top: 100px;
+            margin-top: 86px;
         }
 
-        .updates .section-heading {
-            margin-bottom: 0;
-        }
-
-        .update-list {
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-
-        .update-item {
-            display: grid;
-            grid-template-columns: 72px minmax(0, 1fr);
-            gap: 28px;
-            padding: 30px 0 32px;
-            border-bottom: 1px solid var(--line);
-        }
-
-        .update-number {
-            color: var(--coral);
-            font-size: .75rem;
-            font-weight: 700;
-            letter-spacing: .1em;
-        }
-
-        .update-item h3 {
-            margin: -5px 0 10px;
-            font-size: clamp(1.7rem, 3vw, 2.4rem);
-            line-height: 1.05;
-        }
-
-        .update-item p {
+        .info-body {
             max-width: 690px;
-            margin: 0;
+        }
+
+        .info-body h3 {
+            margin: 28px 0 8px;
+            font-size: 1.35rem;
+            line-height: 1.2;
+        }
+
+        .info-body h3:first-child {
+            margin-top: 0;
+        }
+
+        .info-body p {
+            margin: 0 0 14px;
             color: var(--muted);
             font-size: 1rem;
             line-height: 1.7;
         }
 
+        .info-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        .info-body strong {
+            color: var(--ink);
+        }
+
         @media (max-width: 720px) {
             .urgent-note {
-                grid-template-columns: 82px 1fr;
-                gap: 22px;
                 margin-top: 58px;
                 padding: 24px 20px;
             }
 
-            .urgent-mark {
-                font-size: 1.1rem;
-            }
-
-            .updates {
-                margin-top: 72px;
-            }
-
-            .update-item {
-                grid-template-columns: 42px minmax(0, 1fr);
-                gap: 12px;
-                padding: 24px 0 26px;
+            .info-section {
+                margin-top: 62px;
             }
         }
     </style>
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Ga naar de hoofdinhoud</a>
     <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
-                aria-hidden="true">+</span>Rhodeland</a>
+        <a class="brand" href="index.html" aria-label="Rhodeland home">
+            <span class="brand-mark" aria-hidden="true">+</span>
+            Rhodeland
+        </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
             aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
         <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
             <a href="consultaties.html">Consultaties</a>
-            <a href="team.html">Wie zijn wij?</a>
-            <a href="index.html#zorg">Wat doen wij?</a>
-            <a href="patienten.html">Praktische info</a>
-            <a href="index.html#waar">Contact &amp; route</a>
+            <a href="team.html">Team</a>
+            <a href="patienten.html" aria-current="page">Praktische info</a>
             <a class="nav-appointment" href="consultaties.html">Maak een afspraak</a>
         </nav>
         <span class="location">Merelbeke-Melle · België</span>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <a class="back-link" href="index.html">← Terug naar home</a>
         <p class="eyebrow">Praktische informatie</p>
         <h1>Praktische <em>informatie.</em></h1>
         <p class="lead">Alles wat u moet weten voor uw bezoek, consultaties, huisbezoeken en dringende hulp.</p>
 
         <section class="urgent-note" aria-labelledby="wachtdienst-title">
-            <div class="urgent-mark" aria-hidden="true">!</div>
-            <div>
-                <p class="section-label">Belangrijk om te weten</p>
-                <h2 id="wachtdienst-title">Dringende hulp buiten openingsuren</h2>
-                <p>Vanaf 18u ’s avonds of in het weekend kunt u de huisartsenwachtdienst bereiken via
-                    <strong>1733</strong>.</p>
+            <p class="section-label">Belangrijk om te weten</p>
+            <h2 id="wachtdienst-title">Dringende hulp buiten openingsuren</h2>
+            <p>Vanaf 18u ’s avonds of in het weekend kunt u de huisartsenwachtdienst bereiken via
+                <strong>1733</strong>.</p>
+        </section>
+
+        <section class="info-section" aria-labelledby="openingsuren-title">
+            <div class="section-heading">
+                <h2 id="openingsuren-title">Openingsuren</h2>
+                <p>Consultaties enkel op afspraak</p>
+            </div>
+            <div class="info-body">
+                <p><strong>De praktijk:</strong> maandag tot vrijdag van 08u00 tot 18u00. Consultaties zijn
+                    enkel op afspraak.</p>
+                <p><strong>Het secretariaat:</strong> maandag tot vrijdag van 08u00 tot 12u00. Na 12u00 zijn
+                    we telefonisch enkel bereikbaar voor dringende medische zaken. Gelieve administratieve
+                    vragen in de voormiddag te stellen.</p>
             </div>
         </section>
 
-        <section class="updates" aria-labelledby="updates-title">
+        <section class="info-section" aria-labelledby="huisbezoeken-title">
             <div class="section-heading">
-                <h2 id="updates-title">Praktische afspraken</h2>
-                <p>Voor een vlot bezoek aan de praktijk</p>
+                <h2 id="huisbezoeken-title">Huisbezoeken</h2>
+                <p>Telefonisch aan te vragen</p>
             </div>
-            <ol class="update-list">
-                <li class="update-item">
-                    <span class="update-number" aria-hidden="true">01</span>
-                    <div>
-                        <h3>Openingsuren</h3>
-                        <p><strong>De praktijk:</strong> maandag tot vrijdag van 08u00 tot 18u00. Consultaties zijn
-                            enkel op afspraak.</p>
-                        <p><strong>Het secretariaat:</strong> maandag tot vrijdag van 08u00 tot 12u00. Na 12u00 zijn
-                            we telefonisch enkel bereikbaar voor dringende medische zaken. Gelieve administratieve
-                            vragen in de voormiddag te stellen.</p>
-                    </div>
-                </li>
-                <li class="update-item">
-                    <span class="update-number" aria-hidden="true">02</span>
-                    <div>
-                        <h3>Huisbezoeken</h3>
-                        <p>Huisbezoeken vraagt u telefonisch aan. Niet dringend? Bel voor 10u. Dringende aanvragen
-                            mogen steeds telefonisch. Huisbezoeken zijn enkel mogelijk in Merelbeke.</p>
-                    </div>
-                </li>
-                <li class="update-item">
-                    <span class="update-number" aria-hidden="true">03</span>
-                    <div>
-                        <h3>Mee te nemen</h3>
-                        <p>Breng uw identiteitskaart en een recente medicatiefiche mee naar uw afspraak.</p>
-                    </div>
-                </li>
-                <li class="update-item">
-                    <span class="update-number" aria-hidden="true">04</span>
-                    <div>
-                        <h3>Telefoonnummer</h3>
-                        <p>Ons telefoonnummer is nog niet gekend. We maken dit binnenkort bekend. Na 12u00 vragen we
-                            om enkel te bellen voor dringende medische zaken.</p>
-                    </div>
-                </li>
-                <li class="update-item">
-                    <span class="update-number" aria-hidden="true">05</span>
-                    <div>
-                        <h3>Consultaties</h3>
-                        <p><a href="consultaties.html">Bekijk de regels voor het maken van een consultatie.</a></p>
-                    </div>
-                </li>
-            </ol>
+            <div class="info-body">
+                <p>Huisbezoeken vraagt u telefonisch aan, liefst voor 10u. Dringende aanvragen
+                    mogen uiteraard steeds telefonisch, ook na 10u. We doen enkel huisbezoeken bij patiënten die niet mobiel zijn. Huisbezoeken zijn enkel mogelijk in Merelbeke.</p>
+            </div>
+        </section>
+
+        <section class="info-section" aria-labelledby="voorschriften-title">
+            <div class="section-heading">
+                <h2 id="voorschriften-title">Voorschriften</h2>
+                <p>Altijd op consultatie</p>
+            </div>
+            <div class="info-body">
+                <p>Wij vragen u om steeds op consultatie te komen voor medische voorschriften. Dit is
+                    noodzakelijk om kwaliteitsvolle medische opvolging te kunnen garanderen.</p>
+            </div>
+        </section>
+
+        <section class="info-section" aria-labelledby="contact-title">
+            <div class="section-heading">
+                <h2 id="contact-title">Contact &amp; route</h2>
+                <p>Zo bereikt u ons</p>
+            </div>
+            <div class="info-body">
+                <h3>Telefoonnummer</h3>
+                <p>Ons telefoonnummer is nog niet gekend. We maken dit binnenkort bekend. Na 12u00 vragen we
+                    om enkel te bellen voor dringende medische zaken.</p>
+                <h3>E-mail</h3>
+                <p><a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a></p>
+                <p>Dit adres is niet bedoeld voor medische vragen of voor het aanvragen van voorschriften.
+                    Hiervoor komt u steeds op consultatie.</p>
+                <h3>Adres</h3>
+                <p>Het adres van de praktijk wordt binnenkort bekendgemaakt.</p>
+                <h3>Route</h3>
+                <p>De link naar Google Maps wordt binnenkort toegevoegd.</p>
+            </div>
         </section>
     </main>
 
-    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke-Melle · België</span></footer>
+    <footer>
+        <span>Rhodeland huisartsenpraktijk</span>
+        <span>Merelbeke-Melle · België</span>
+        <address>
+            <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
+            · Adres en telefoonnummer volgen binnenkort
+        </address>
+    </footer>
     <script src="menu.js"></script>
 </body>
 

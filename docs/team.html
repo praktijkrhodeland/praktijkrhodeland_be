@@ -220,27 +220,28 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Ga naar de hoofdinhoud</a>
     <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Rhodeland home"><span class="brand-mark"
-                aria-hidden="true">+</span>Rhodeland</a>
+        <a class="brand" href="index.html" aria-label="Rhodeland home">
+            <span class="brand-mark" aria-hidden="true">+</span>
+            Rhodeland
+        </a>
         <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
             aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
         <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
             <a href="consultaties.html">Consultaties</a>
-            <a href="team.html">Wie zijn wij?</a>
-            <a href="index.html#zorg">Wat doen wij?</a>
+            <a href="team.html" aria-current="page">Team</a>
             <a href="patienten.html">Praktische info</a>
-            <a href="index.html#waar">Contact &amp; route</a>
             <a class="nav-appointment" href="consultaties.html">Maak een afspraak</a>
         </nav>
-        <span class="location">Merelbeke · België</span>
+        <span class="location">Merelbeke-Melle · België</span>
     </header>
 
-    <main>
+    <main id="main" tabindex="-1">
         <a class="back-link" href="index.html">← Terug naar home</a>
         <p class="eyebrow">De mensen achter Rhodeland</p>
         <h1>Ons <em>team.</em></h1>
-        <p class="lead">Een praktijk wordt gemaakt door mensen. Maak kennis met het team dat klaarstaat voor warme en
+        <p class="lead">Maak kennis met het team dat klaarstaat voor warme en
             toegankelijke huisartsenzorg in Merelbeke.</p>
 
         <section class="team-section" aria-labelledby="artsen-title">
@@ -250,19 +251,19 @@
             </div>
             <div class="team-grid">
                 <a class="person-card" href="stefanie-vermandere.html">
-                    <img class="person-photo" src="images/Stefanie Vermandere.jpg" alt="Dr. Stefanie Vermandere">
+                    <img class="person-photo" src="images/Stefanie Vermandere.jpg" alt="">
                     <div class="person-info"><span class="person-role">Arts</span>
                         <h3>Dr. Stefanie Vermandere</h3>
                     </div>
                 </a>
                 <a class="person-card" href="roy-van-durme.html">
-                    <img class="person-photo" src="images/Roy Van Durme.jpeg" alt="Dr. Roy Van Durme">
+                    <img class="person-photo" src="images/Roy Van Durme.jpeg" alt="">
                     <div class="person-info"><span class="person-role">Arts</span>
                         <h3>Dr. Roy Van Durme</h3>
                     </div>
                 </a>
                 <a class="person-card" href="hendrik-bovendaerde.html">
-                    <img class="person-photo" src="images/Hendrik.jpg" alt="Dr. Hendrik Bovendaerde">
+                    <img class="person-photo" src="images/Hendrik.jpg" alt="">
                     <div class="person-info"><span class="person-role">Arts</span>
                         <h3>Dr. Hendrik Bovendaerde</h3>
                     </div>
@@ -277,7 +278,7 @@
             </div>
             <div class="team-grid is-single">
                 <a class="person-card" href="katinka.html">
-                    <img class="person-photo" src="images/katinka.jpg" alt="Katinka, verpleegkundige">
+                    <img class="person-photo" src="images/katinka.jpg" alt="">
                     <div class="person-info"><span class="person-role">Verpleegkundige</span>
                         <h3>Katinka</h3>
                     </div>
@@ -292,7 +293,7 @@
             </div>
             <div class="team-grid is-single">
                 <a class="person-card" href="kristien.html">
-                    <img class="person-photo" src="images/Kristien.jpeg" alt="Kristien, secretaresse">
+                    <img class="person-photo" src="images/Kristien.jpeg" alt="">
                     <div class="person-info"><span class="person-role">Secretaresse</span>
                         <h3>Kristien</h3>
                     </div>
@@ -302,7 +303,14 @@
 
     </main>
 
-    <footer><span>Rhodeland huisartsenpraktijk</span><span>Merelbeke · België</span></footer>
+    <footer>
+        <span>Rhodeland huisartsenpraktijk</span>
+        <span>Merelbeke-Melle · België</span>
+        <address>
+            <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
+            · Adres en telefoonnummer volgen binnenkort
+        </address>
+    </footer>
     <script src="menu.js"></script>
 </body>
 

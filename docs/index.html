@@ -13,7 +13,12 @@
         .page {
             position: relative;
             min-height: 100vh;
+            /* "clip" hides the decorative circle without turning the page into
+               a scrollable box. With "hidden" the circle sticking out on the
+               right could be scrolled to, shifting the whole page sideways
+               with no scrollbar to get back. */
             overflow: hidden;
+            overflow: clip;
         }
 
         .page::before {
@@ -39,26 +44,6 @@
 
         .page>.topbar {
             z-index: 5;
-        }
-
-        .site-nav {
-            display: flex;
-            gap: 24px;
-            margin-left: auto;
-            color: var(--muted);
-            font-size: .76rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .site-nav a {
-            text-decoration: none;
-        }
-
-        .site-nav a:hover {
-            color: var(--coral);
         }
 
         .brand-mark {
@@ -128,17 +113,6 @@
 
         .appointment:hover {
             background: var(--ink);
-        }
-
-        button.appointment {
-            border: 0;
-            font: inherit;
-            cursor: not-allowed;
-            opacity: .65;
-        }
-
-        button.appointment:hover {
-            background: var(--coral);
         }
 
         .appointment-note {
@@ -334,55 +308,73 @@
             color: var(--ink);
         }
 
+        /* Stand-in for the group photo, drawn in the same style as the photo
+           placeholders on the team page. Both rules share the size and spacing,
+           so replacing the placeholder block with <img class="group-photo">
+           leaves the rest of the layout untouched. */
+        .group-photo,
+        .group-photo-placeholder {
+            width: 100%;
+            margin: 28px 0 4px;
+            aspect-ratio: 16 / 9;
+            border-radius: 22px;
+        }
+
+        .group-photo {
+            display: block;
+            object-fit: cover;
+        }
+
+        .group-photo-placeholder {
+            position: relative;
+            display: grid;
+            align-content: end;
+            overflow: hidden;
+            padding: 18px;
+            background: var(--mint);
+        }
+
+        /* Three outlined figures, so the empty frame reads as a group rather
+           than a single portrait. */
+        .group-photo-figures {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            display: flex;
+            align-items: flex-end;
+            gap: 18px;
+            transform: translate(-50%, -58%);
+        }
+
+        .group-photo-figures span {
+            display: block;
+            width: 62px;
+            height: 86px;
+            border: 1px solid rgba(23, 61, 55, .24);
+            border-radius: 50% 50% 42% 42%;
+        }
+
+        .group-photo-figures span:nth-child(2) {
+            width: 78px;
+            height: 108px;
+        }
+
+        .group-photo-placeholder p {
+            position: relative;
+            margin: 0;
+            color: var(--ink);
+            font-size: .68rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
         @media (max-width: 720px) {
-
-            .topbar,
-            main,
-            footer {
-                width: min(100% - 40px, 560px);
-            }
-
-            .topbar {
-                padding: 22px 0;
-            }
-
-            .location {
-                font-size: .65rem;
-            }
-
-            .site-nav {
-                position: absolute;
-                z-index: 10;
-                top: calc(100% + 1px);
-                right: 0;
-                display: none;
-                flex-direction: column;
-                width: min(260px, calc(100vw - 40px));
-                margin-left: 0;
-                padding: 10px;
-                gap: 2px;
-                background: var(--white);
-                border: 1px solid var(--line);
-                box-shadow: 0 18px 35px rgba(23, 61, 55, .12);
-                font-size: .62rem;
-            }
-
-            .site-nav a {
-                padding: 12px 10px;
-            }
-
-            .site-nav.is-open {
-                display: flex;
-            }
 
             .hero {
                 display: block;
                 min-height: 0;
                 padding: 72px 0 50px;
-            }
-
-            h1 {
-                font-size: clamp(3.8rem, 18vw, 6.4rem);
             }
 
             .visual {
@@ -410,21 +402,13 @@
                 width: 100%;
                 height: 80%;
             }
-
-            footer {
-                display: block;
-                line-height: 1.7;
-            }
-
-            footer span {
-                display: block;
-            }
         }
 
         @media (prefers-reduced-motion: no-preference) {
 
+            /* The navigation is left out on purpose: showing the collapsed
+               menu would replay this animation on every open. */
             .brand,
-            .site-nav,
             .eyebrow,
             h1,
             .intro,
@@ -459,14 +443,14 @@
                 animation-delay: .2s;
             }
 
+            /* Only the position is animated. Fading the text in would put it
+               briefly below the required contrast while it is readable. */
             @keyframes reveal {
                 from {
-                    opacity: 0;
                     transform: translateY(14px);
                 }
 
                 to {
-                    opacity: 1;
                     transform: translateY(0);
                 }
             }
@@ -475,6 +459,7 @@
 </head>
 
 <body>
+    <a class="skip-link" href="#main">Ga naar de hoofdinhoud</a>
     <div class="page">
         <header class="topbar">
             <a class="brand" href="/" aria-label="Rhodeland home">
@@ -485,16 +470,14 @@
                 aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
             <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
                 <a href="consultaties.html">Consultaties</a>
-                <a href="team.html">Wie zijn wij?</a>
-                <a href="#zorg">Wat doen wij?</a>
+                <a href="team.html">Team</a>
                 <a href="patienten.html">Praktische info</a>
-                <a href="#waar">Contact &amp; route</a>
                 <a class="nav-appointment" href="consultaties.html">Maak een afspraak</a>
             </nav>
             <span class="location">Merelbeke-Melle · België</span>
         </header>
 
-        <main>
+        <main id="main" tabindex="-1">
             <section class="hero" aria-labelledby="page-title">
                 <div>
                 <p class="eyebrow">Nieuwe huisartsenpraktijk</p>
@@ -518,6 +501,15 @@
                     <h2 id="over-ons-title">Wie zijn wij?</h2>
                     <div class="content-copy">
                         <p>Een nieuwe praktijk met een warm en deskundig team.</p>
+                        <!-- Plaatshouder voor de groepsfoto. Vervang dit hele blok door
+                             <img class="group-photo" src="images/<bestandsnaam>" alt="Het team van praktijk Rhodeland">
+                             zodra de foto er is. -->
+                        <div class="group-photo-placeholder">
+                            <span class="group-photo-figures" aria-hidden="true">
+                                <span></span><span></span><span></span>
+                            </span>
+                            <p>Groepsfoto volgt binnenkort</p>
+                        </div>
                         <a class="appointment" href="team.html">Maak kennis met ons team</a>
                     </div>
                 </div>
@@ -539,7 +531,7 @@
                             <li>Gesprekken over het levenseinde en palliatieve zorg</li>
                         </ul>
                         <p class="support-note"><strong>Onze praktijkverpleegkundige Katinka</strong> ondersteunt het
-                            team onder andere met zorgprotocollen, preventieprojecten, vaccinatiecampagenes, ... U kunt
+                            team onder andere met zorgprotocollen, preventieprojecten, vaccinatiecampagnes, ... U kunt
                             ook bij haar een afspraak maken.</p>
                     </div>
                 </div>
@@ -561,23 +553,15 @@
                 </div>
             </section>
 
-            <section class="content-section" id="waar" aria-labelledby="contact-title">
-                <div class="content-grid">
-                    <h2 id="contact-title">Contact &amp; route</h2>
-                    <div class="content-copy">
-                        <ul class="info-list">
-                            <li><strong>Adres</strong><span>Binnenkort beschikbaar.</span></li>
-                            <li><strong>Telefoonnummer</strong><span>Binnenkort beschikbaar.</span></li>
-                            <li><strong>Google Maps</strong><span>De link naar Google Maps wordt binnenkort toegevoegd.</span></li>
-                        </ul>
-                    </div>
-                </div>
-            </section>
         </main>
 
         <footer>
             <span>Rhodeland huisartsenpraktijk</span>
             <span>Merelbeke-Melle · België</span>
+            <address>
+                <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
+                · Adres en telefoonnummer volgen binnenkort
+            </address>
         </footer>
     </div>
     <script src="menu.js"></script>
