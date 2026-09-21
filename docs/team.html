@@ -4,326 +4,168 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#173d37">
+    <meta name="theme-color" content="#a8452c">
     <meta name="description" content="Maak kennis met het team van Rhodeland in Merelbeke-Melle.">
     <title>Ons team | Rhodeland</title>
-    <link rel="stylesheet" href="common.css">
-    <style>
-        .team-section {
-            margin-top: 88px;
-        }
-
-        .team-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 20px;
-        }
-
-        .person-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            overflow: hidden;
-            background: var(--white);
-            border: 1px solid var(--line);
-            border-radius: 22px;
-            text-decoration: none;
-            transition: transform .4s ease, box-shadow .4s ease;
-        }
-
-        .person-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 35px rgba(23, 61, 55, .1);
-        }
-
-        .person-photo,
-        .photo-placeholder {
-            display: block;
-            width: 100%;
-            aspect-ratio: 4 / 5;
-            object-fit: cover;
-            background: var(--mint);
-            border-radius: 22px 22px 0 0;
-        }
-
-        .photo-placeholder {
-            position: relative;
-            display: grid;
-            aspect-ratio: 4 / 5;
-            place-items: end start;
-            overflow: hidden;
-            padding: 16px;
-            background: var(--mint);
-            color: var(--ink);
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-        }
-
-        .photo-placeholder::before {
-            content: '';
-            position: absolute;
-            top: 18%;
-            left: 22%;
-            width: 56%;
-            height: 70%;
-            border: 1px solid rgba(23, 61, 55, .22);
-            border-radius: 50% 50% 42% 42%;
-            transform: rotate(8deg);
-        }
-
-        .photo-placeholder::after {
-            content: '+';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            color: rgba(23, 61, 55, .25);
-            font-family: var(--display);
-            font-size: 4rem;
-            transform: translate(-50%, -50%);
-        }
-
-        .team-grid.is-single {
-            grid-template-columns: minmax(0, 1fr);
-            max-width: calc((100% - 40px) / 3);
-            margin: 0 auto;
-        }
-
-        .team-grid.is-single .person-card {
-            width: 100%;
-            max-width: 420px;
-            margin-inline: auto;
-        }
-
-        .team-grid.is-single .person-photo,
-        .team-grid.is-single .photo-placeholder {
-            width: 100%;
-            max-height: none;
-        }
-
-        .person-info {
-            display: flex;
-            flex: 1;
-            flex-direction: column;
-            justify-content: center;
-            padding: 20px 20px 22px;
-        }
-
-        .person-role {
-            color: var(--coral);
-            font-size: .68rem;
-            font-weight: 700;
-            letter-spacing: .12em;
-            text-transform: uppercase;
-        }
-
-        .person-link .icon {
-            width: 16px;
-            height: 16px;
-            color: var(--coral);
-        }
-
-        .person-info h3 {
-            margin: 10px 0 0;
-            font-size: 1.65rem;
-            line-height: 1.05;
-        }
-
-        .person-link {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 18px;
-            color: var(--muted);
-            font-size: .78rem;
-            font-weight: 700;
-            letter-spacing: .08em;
-            text-transform: uppercase;
-        }
-
-        .staff-section {
-            margin-top: 104px;
-        }
-
-        .staff-layout {
-            display: grid;
-            grid-template-columns: .75fr 1.25fr;
-            gap: clamp(35px, 8vw, 110px);
-            align-items: start;
-            padding-top: 30px;
-            border-top: 1px solid var(--line);
-        }
-
-        .staff-layout h2 {
-            margin: 0;
-            font-size: clamp(2rem, 4vw, 3.4rem);
-            line-height: 1;
-        }
-
-        .staff-copy p {
-            margin: 0 0 18px;
-            color: var(--muted);
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        .staff-copy p:last-child {
-            margin-bottom: 0;
-        }
-
-        .staff-copy strong {
-            color: var(--ink);
-        }
-
-        @media (max-width: 900px) {
-            .team-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .team-grid.is-single {
-                max-width: calc((100% - 20px) / 2);
-            }
-        }
-
-        @media (max-width: 720px) {
-            .team-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 12px;
-            }
-
-            .team-grid.is-single {
-                max-width: calc((100% - 12px) / 2);
-            }
-
-            .person-info {
-                padding: 15px 14px 17px;
-            }
-
-            .person-info h3 {
-                font-size: 1.3rem;
-            }
-
-            .person-link {
-                font-size: .68rem;
-            }
-
-            .team-section {
-                margin-top: 68px;
-            }
-
-            .staff-section {
-                margin-top: 78px;
-            }
-
-            .staff-layout {
-                display: block;
-            }
-
-            .staff-copy {
-                margin-top: 28px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Nunito:wght@400;600;700;800&display=swap">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
     <a class="skip-link" href="#main">Ga naar de hoofdinhoud</a>
-    <header class="topbar">
-        <a class="brand" href="index.html" aria-label="Rhodeland home">
-            <span class="brand-mark" aria-hidden="true">+</span>
-            Rhodeland
-        </a>
-        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"
-            aria-label="Menu openen"><span class="menu-icon" aria-hidden="true"></span></button>
-        <nav class="site-nav" id="main-menu" aria-label="Hoofdnavigatie">
-            <a href="consultaties.html">Consultaties</a>
-            <a href="team.html" aria-current="page">Team</a>
-            <a href="patienten.html">Praktische info</a>
-            <a class="nav-appointment" href="consultaties.html">Maak een afspraak</a>
-        </nav>
-        <span class="location">Merelbeke-Melle · België</span>
+    <header class="masthead">
+        <div class="wrap">
+            <a class="brand" href="index.html">
+                <span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span> Rhodeland
+            </a>
+            <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-menu"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg> Menu</button>
+            <nav class="nav" id="main-menu" aria-label="Hoofdnavigatie">
+                <a href="consultaties.html">Consultaties</a>
+                <a href="team.html" aria-current="page">Team</a>
+                <a href="patienten.html">Praktische info</a>
+                <a class="btn btn-primary" href="consultaties.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Afspraak</a>
+            </nav>
+        </div>
     </header>
 
-    <main id="main" tabindex="-1">
-        <a class="back-link" href="index.html">← Terug naar home</a>
-        <p class="eyebrow">De mensen achter Rhodeland</p>
-        <h1>Ons <em>team.</em></h1>
-        <p class="lead">Maak kennis met het team dat klaarstaat voor warme en
-            toegankelijke huisartsenzorg in Merelbeke.</p>
-
-        <section class="team-section" aria-labelledby="artsen-title">
-            <div class="section-heading">
-                <h2 id="artsen-title">Artsen</h2>
-                <p>Ons medisch team.</p>
-            </div>
-            <div class="team-grid">
-                <a class="person-card" href="stefanie-vermandere.html">
-                    <img class="person-photo" src="images/Stefanie Vermandere.jpg" alt="">
-                    <div class="person-info"><span class="person-role">Arts</span>
-                        <h3>Dr. Stefanie Vermandere</h3>
-                        <span class="person-link"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>Lees meer</span>
-                    </div>
-                </a>
-                <a class="person-card" href="roy-van-durme.html">
-                    <img class="person-photo" src="images/Roy Van Durme.jpeg" alt="">
-                    <div class="person-info"><span class="person-role">Arts</span>
-                        <h3>Dr. Roy Van Durme</h3>
-                        <span class="person-link"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>Lees meer</span>
-                    </div>
-                </a>
-                <a class="person-card" href="hendrik-bovendaerde.html">
-                    <img class="person-photo" src="images/Hendrik.jpg" alt="">
-                    <div class="person-info"><span class="person-role">Arts</span>
-                        <h3>Dr. Hendrik Bovendaerde</h3>
-                        <span class="person-link"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>Lees meer</span>
-                    </div>
-                </a>
+    <main id="main">
+        <section class="page-head">
+            <div class="wrap">
+                <a class="back-link" href="index.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg> Terug naar home</a>
+                <p class="eyebrow"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="9" cy="8" r="3.4"/><path d="M2.6 19.5a6.4 6.4 0 0 1 12.8 0"/><path d="M16.4 5.3a3.4 3.4 0 0 1 0 6.4"/><path d="M17.8 14.8a6.4 6.4 0 0 1 3.6 4.7"/></svg> De mensen achter Rhodeland</p>
+                <h1>Ons team</h1>
+                <p class="lead">Maak kennis met het team dat klaarstaat voor warme en toegankelijke huisartsenzorg in Merelbeke.</p>
             </div>
         </section>
 
-        <section class="team-section" aria-labelledby="verpleegkundige-title">
-            <div class="section-heading">
-                <h2 id="verpleegkundige-title">Verpleegkundige</h2>
-                <p>Ondersteuning en preventie in de praktijk.</p>
-            </div>
-            <div class="team-grid is-single">
-                <a class="person-card" href="katinka.html">
-                    <img class="person-photo" src="images/katinka.jpg" alt="">
-                    <div class="person-info"><span class="person-role">Verpleegkundige</span>
-                        <h3>Katinka</h3>
-                        <span class="person-link"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>Lees meer</span>
-                    </div>
-                </a>
+        <section class="section" aria-labelledby="artsen-title">
+            <div class="wrap">
+                <div class="section-head">
+                    <h2 id="artsen-title">Artsen</h2>
+                    <p>Ons medisch team.</p>
+                </div>
+                    <article class="bio">
+                        <img src="images/Stefanie Vermandere.jpg" alt="Dr. Stefanie Vermandere">
+                        <div>
+                            <span class="role">Huisarts</span>
+                            <h2>Dr. Stefanie Vermandere</h2>
+                            <p>Ik ben Stefanie, huisarts én mama van twee dochters. Samen met mijn man en kinderen woon ik in Merelbeke.</p>
+                            <p>Ik kom uit een huisartsen-gezin: van jongs af aan was ik gefascineerd door de job van mijn vader, die tot voor kort als huisarts werkte in Roeselare. In 2012 studeerde ik af als arts aan de KU Leuven, waarna ik dan ook met volle overtuiging voor huisartsgeneeskunde koos.</p>
+                            <p>Voor mij is het een voorrecht om mensen van dichtbij te mogen begeleiden in alle fasen van het leven: van pasgeboren baby’s, de vele infecties tijdens de kleuterleeftijd, zwangerschapsbegeleiding, zorg voor ouderen, tot palliatieve zorg. Binnen de huisartsgeneeskunde heb ik een bijzondere interesse in pediatrie en gynaecologie.</p>
+                            <p>Ik vind het belangrijk mijn patiënten empathisch en onbevooroordeeld te benaderen. Ik geloof sterk in het principe “shared decision making”, waarin je als patiënt, na het krijgen van alle informatie, actief mee beslist over jouw behandeling.</p>
+                            <p>Ik spreek Nederlands, Frans, Engels, en dankzij mijn stage in Zuid-Amerika ook Spaans.</p>
+                        </div>
+                    </article>
+                    <article class="bio">
+                        <img src="images/Roy Van Durme.jpeg" alt="Dr. Roy Van Durme">
+                        <div>
+                            <span class="role">Huisarts</span>
+                            <h2>Dr. Roy Van Durme</h2>
+                            <p>Ik neem graag even de tijd om mij kort aan jullie voor te stellen. Mijn naam is Roy Van Durme. Eind september 2025 rondde ik mijn opleiding tot huisarts aan de Universiteit Gent succesvol af.</p>
+                            <p>Ik koos bewust voor de huisartsgeneeskunde omwille van de brede en veelzijdige kijk op geneeskunde. Mijn bijzondere interesses gaan uit naar het behandelen van hart- en vaatziekten, het begeleiden van chronische ziekten en preventieve geneeskunde. Daarnaast bracht ik in 2024 ook de permanente vorming tot sportarts tot een goed einde waardoor ik ook sporters met acute sportletsels kan behandelen en begeleiden. In de nabije toekomst zou ik hier graag nog een opleiding echografie aan koppelen om zo nog gerichtere diagnostiek en therapeutische acties te kunnen ondernemen.</p>
+                            <p>Een goede, vertrouwensvolle arts-patiëntrelatie vind ik essentieel. Ik hecht veel belang aan open communicatie waarbij alles bespreekbaar is, zonder taboes, en waarbij elke patiënt zich gehoord en gerespecteerd voelt.</p>
+                            <p>Ik kijk ernaar uit om jullie te ontvangen.</p>
+                        </div>
+                    </article>
+                    <article class="bio">
+                        <img src="images/Hendrik.jpg" alt="Dr. Hendrik Bovendaerde">
+                        <div>
+                            <span class="role">Huisarts</span>
+                            <h2>Dr. Hendrik Bovendaerde</h2>
+                            <p>Hier komt binnenkort de persoonlijke voorstelling van deze arts. We vullen deze pagina aan met meer informatie over de achtergrond en werking.</p>
+                        </div>
+                    </article>
             </div>
         </section>
 
-        <section class="team-section" aria-labelledby="secretaresse-title">
-            <div class="section-heading">
-                <h2 id="secretaresse-title">Secretaresse</h2>
-                <p>Jouw eerste contact in de praktijk.</p>
-            </div>
-            <div class="team-grid is-single">
-                <a class="person-card" href="kristien.html">
-                    <img class="person-photo" src="images/Kristien.jpeg" alt="">
-                    <div class="person-info"><span class="person-role">Secretaresse</span>
-                        <h3>Kristien</h3>
-                        <span class="person-link"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 12h15"/><path d="m13 6 6 6-6 6"/></svg>Lees meer</span>
+        <section class="section" aria-labelledby="staf-title">
+            <div class="wrap">
+                <div class="panel panel-sage">
+                    <div class="section-head">
+                        <h2 id="staf-title">Verpleegkundige &amp; secretariaat</h2>
+                        <p>Ondersteuning, preventie en uw eerste aanspreekpunt.</p>
                     </div>
-                </a>
+                    <article class="bio">
+                        <img src="images/katinka.jpg" alt="Katinka">
+                        <div>
+                            <span class="role">Praktijkverpleegkundige</span>
+                            <h2>Katinka</h2>
+                            <p>Onze praktijkverpleegkundige Katinka ondersteunt het team met onder andere zorgprotocollen, preventieprojecten, vaccinaties, … U kunt ook bij haar een consult inboeken.</p>
+                            <p>Bij Katinka kunt u onder meer terecht voor een ECG, wondzorg, controle van bloeddruk en diabetes, vaccinaties, medicatiecontrole, preventieve zorg en nog veel meer.</p>
+                        </div>
+                    </article>
+                    <article class="bio">
+                        <img src="images/Kristien.jpeg" alt="Kristien">
+                        <div>
+                            <span class="role">Secretaresse</span>
+                            <h2>Kristien</h2>
+                            <p>Kristien is onze secretaresse en het eerste aanspreekpunt van de praktijk. Zij helpt u graag verder met praktische vragen, afspraken en administratieve zaken.</p>
+                            <p>Het secretariaat is open van maandag tot vrijdag van 08u00 tot 12u00. Na 12u00 zijn wij telefonisch enkel bereikbaar voor dringende medische zaken. Gelieve administratieve vragen in de voormiddag te stellen.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" aria-labelledby="cta-title">
+            <div class="wrap">
+                <div class="cta-panel">
+                    <div>
+                        <h2 id="cta-title">Klaar om een afspraak te maken?</h2>
+                        <p>De agenda is momenteel nog niet beschikbaar. Binnenkort zullen patiënten hier wel een afspraak kunnen inboeken.</p>
+                    </div>
+                    <div class="cta-actions">
+                        <a class="btn btn-light" href="consultaties.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> Consultaties</a>
+                        <a class="btn btn-outline-light" href="patienten.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M12 11.2v5"/><circle cx="12" cy="7.8" r="1.05" fill="currentColor" stroke="none"/></svg> Praktische info</a>
+                    </div>
+                </div>
             </div>
         </section>
 
     </main>
 
-    <footer>
-        <span>Rhodeland huisartsenpraktijk</span>
-        <span>Merelbeke-Melle · België</span>
-        <address>
-            <a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a>
-            · Adres en telefoonnummer volgen binnenkort
-        </address>
+    <footer class="site-footer">
+        <div class="wrap">
+            <div class="footer-grid">
+                <div>
+                    <p class="brand"><span class="brand-mark" aria-hidden="true"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 5v14M5 12h14"/></svg></span>
+                        Rhodeland</p>
+                    <p>Nieuwe huisartsenpraktijk in Merelbeke-Melle. Kwalitatieve, toegankelijke
+                        en warme zorg.</p>
+                </div>
+                <div>
+                    <h2>Contact</h2>
+                    <address>
+                        <p><a href="mailto:info@praktijkrhodeland.be">info@praktijkrhodeland.be</a></p>
+                        <p>Adres en telefoonnummer volgen binnenkort.</p>
+                    </address>
+                </div>
+                <div>
+                    <h2>Openingsuren</h2>
+                    <ul>
+                        <li>Praktijk: ma &ndash; vr, 08u00 &ndash; 18u00</li>
+                        <li>Secretariaat: ma &ndash; vr, 08u00 &ndash; 12u00</li>
+                        <li>Dringend na 18u: bel 1733</li>
+                    </ul>
+                </div>
+                <div>
+                    <h2>Snel naar</h2>
+                    <ul>
+                        <li><a href="consultaties.html">Consultaties</a></li>
+                        <li><a href="team.html">Ons team</a></li>
+                        <li><a href="patienten.html">Praktische info</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>Rhodeland huisartsenpraktijk</span>
+                <span>Merelbeke-Melle &middot; Belgi&euml;</span>
+            </div>
+        </div>
     </footer>
+
     <script src="menu.js"></script>
 </body>
 

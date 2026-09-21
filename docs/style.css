@@ -1,5 +1,5 @@
 /* ===========================================================================
-   Optie 4 — "Warm & menselijk"
+   Rhodeland — "Warm & menselijk"
    Zachte, ronde vormen in warme tinten. Veel lucht, grote leesbare tekst en
    vriendelijke iconen. Minder klinisch, meer huiskamer.
    =========================================================================== */
@@ -855,19 +855,6 @@ img {
     padding-top: 20px;
     border-top: 1px solid var(--line);
     font-size: .88rem;
-}
-
-/* Tijdelijk: keuzemenu tussen de ontwerpvoorstellen. */
-.style-options {
-    flex-basis: 100%;
-    margin: 0;
-    padding-top: 12px;
-    border-top: 1px dashed var(--line);
-    font-size: .85rem;
-}
-
-.style-options a {
-    margin-right: 14px;
 }
 
 /* --- responsief ----------------------------------------------------------- */
