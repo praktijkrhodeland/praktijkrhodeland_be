@@ -281,21 +281,53 @@
                         <h2 id="team-title">De mensen achter Rhodeland</h2>
                         <p>Een nieuwe praktijk met een warm en deskundig team.</p>
                     </div>
-                    <div class="people">
-                        <div class="person">
+                    <div class="people-carousel" data-people-carousel>
+                        <div class="people" tabindex="0" role="region" aria-label="Zorgverleners"
+                            aria-roledescription="carrousel">
+                        <div class="person" role="group" aria-roledescription="dia"
+                            aria-label="1 van 5: Dr. Stefanie Vermandere, huisarts">
                             <img src="images/Stefanie Vermandere.jpg" alt="Dr. Stefanie Vermandere">
                             <h3>Dr. Stefanie Vermandere</h3>
                             <span class="role">Huisarts</span>
                         </div>
-                        <div class="person">
+                        <div class="person" role="group" aria-roledescription="dia"
+                            aria-label="2 van 5: Dr. Roy Van Durme, huisarts">
                             <img src="images/Roy Van Durme.jpeg" alt="Dr. Roy Van Durme">
                             <h3>Dr. Roy Van Durme</h3>
                             <span class="role">Huisarts</span>
                         </div>
-                        <div class="person">
+                        <div class="person" role="group" aria-roledescription="dia"
+                            aria-label="3 van 5: Dr. Hendrik Bovendaerde, huisarts">
                             <img src="images/Hendrik.jpg" alt="Dr. Hendrik Bovendaerde">
                             <h3>Dr. Hendrik Bovendaerde</h3>
                             <span class="role">Huisarts</span>
+                        </div>
+                        <div class="person" role="group" aria-roledescription="dia"
+                            aria-label="4 van 5: Katinka, praktijkverpleegkundige">
+                            <img src="images/katinka.jpg" alt="Katinka">
+                            <h3>Katinka</h3>
+                            <span class="role">Praktijkverpleegkundige</span>
+                        </div>
+                        <div class="person" role="group" aria-roledescription="dia"
+                            aria-label="5 van 5: Kristien, secretaresse">
+                            <img src="images/Kristien.jpeg" alt="Kristien">
+                            <h3>Kristien</h3>
+                            <span class="role">Secretaresse</span>
+                        </div>
+                        </div>
+                        <div class="people-controls" aria-label="Bediening zorgverleners">
+                            <button class="people-control" type="button" data-people-previous
+                                aria-label="Vorige zorgverlener" disabled>
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M20 12H4m0 0 7-7m-7 7 7 7" />
+                                </svg>
+                            </button>
+                            <button class="people-control" type="button" data-people-next
+                                aria-label="Volgende zorgverlener">
+                                <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                                    <path d="M4 12h16m0 0-7-7m7 7-7 7" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
                     <p style="margin:34px 0 0"><a class="btn btn-soft" href="team.html"><svg class="icon"
@@ -377,6 +409,7 @@
     </footer>
 
     <script src="menu.js"></script>
+    <script src="team-carousel.js"></script>
 </body>
 
 </html>
