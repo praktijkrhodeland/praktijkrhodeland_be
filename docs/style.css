@@ -410,6 +410,12 @@ img {
     list-style: none;
 }
 
+.hours-group-title {
+    margin: 8px 0 0;
+    color: var(--brown);
+    font-weight: 800;
+}
+
 .hours li {
     display: flex;
     flex-wrap: wrap;
