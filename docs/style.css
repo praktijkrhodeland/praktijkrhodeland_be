@@ -361,9 +361,19 @@ img {
 }
 
 .hero .lead {
-    max-width: 46ch;
+    max-width: none;
     margin: 20px 0 0;
     font-size: 1.14rem;
+}
+
+.hero-notices {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.hero-notices > * {
+    min-width: 0;
 }
 
 .hero-actions {
@@ -463,6 +473,35 @@ img {
     padding: clamp(40px, 6vw, 70px) 0;
 }
 
+.section-compact {
+    padding-top: clamp(12px, 2vw, 24px);
+}
+
+.team-section {
+    padding-top: clamp(16px, 2vw, 24px);
+}
+
+.team-intro {
+    margin-bottom: clamp(28px, 4vw, 44px);
+}
+
+.team-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 18px;
+    margin-bottom: 18px;
+}
+
+.team-meta .back-link,
+.team-meta .eyebrow {
+    margin-bottom: 0;
+}
+
+.team-intro .lead {
+    margin-top: 18px;
+}
+
 .panel {
     padding: clamp(34px, 5vw, 66px);
     border-radius: var(--radius-l);
@@ -495,7 +534,7 @@ img {
 }
 
 .page-head .lead {
-    max-width: 54ch;
+    max-width: none;
     margin: 20px 0 0;
     font-size: 1.14rem;
 }
@@ -846,6 +885,21 @@ img {
     border-radius: var(--radius-l);
 }
 
+.alert-panel-clay {
+    background: var(--clay);
+    color: var(--white);
+}
+
+.alert-panel.alert-panel-clay h2,
+.alert-panel.alert-panel-clay p {
+    color: var(--white);
+}
+
+.alert-panel-clay .icon-circle {
+    background: rgba(255, 255, 255, .16);
+    color: var(--white);
+}
+
 .alert-panel h2 {
     margin-bottom: 10px;
     font-size: clamp(1.4rem, 2.8vw, 2rem);
@@ -1021,6 +1075,10 @@ img {
         grid-template-columns: minmax(0, 1fr);
     }
 
+    .hero-notices {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
     .cta-panel {
         grid-template-columns: minmax(0, 1fr);
     }
@@ -1034,6 +1092,10 @@ img {
 
     body {
         font-size: 16.5px;
+    }
+
+    .hero-notices {
+        grid-template-columns: minmax(0, 1fr);
     }
 
     .people {
