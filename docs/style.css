@@ -336,9 +336,9 @@ img {
     position: relative;
     overflow: hidden;
     display: grid;
-    grid-template-columns: minmax(0, 1.08fr) minmax(290px, .92fr);
-    gap: clamp(30px, 5vw, 60px);
-    align-items: center;
+    grid-template-columns: minmax(0, 1fr);
+    gap: clamp(30px, 4vw, 48px);
+    align-items: start;
     padding: clamp(36px, 6vw, 72px);
     background: var(--sand);
     border-radius: var(--radius-l);
@@ -380,6 +380,8 @@ img {
 
 /* Zachte kaart met de praktische gegevens. */
 .soft-card {
+    width: min(100%, 760px);
+    justify-self: center;
     padding: 28px 30px 30px;
     background: var(--white);
     border-radius: var(--radius-m);
