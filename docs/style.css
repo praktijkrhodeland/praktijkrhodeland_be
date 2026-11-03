@@ -890,14 +890,33 @@ img {
     color: var(--white);
 }
 
+.alert-panel-sage {
+    background: var(--sage-soft);
+    color: var(--brown);
+}
+
 .alert-panel.alert-panel-clay h2,
 .alert-panel.alert-panel-clay p {
+    color: var(--white);
+}
+
+.alert-panel.alert-panel-sage h2,
+.alert-panel.alert-panel-sage p {
+    color: var(--brown);
+}
+
+.alert-panel-sage .icon-circle {
+    background: var(--sage);
     color: var(--white);
 }
 
 .alert-panel-clay .icon-circle {
     background: rgba(255, 255, 255, .16);
     color: var(--white);
+}
+
+.alert-panel-sage strong {
+    font-size: inherit;
 }
 
 .alert-panel h2 {
