@@ -4,6 +4,7 @@ Dit is de website van https://praktijkrhodeland.be
 This project only consists out of public static files. Everything in the /docs folder is published through GitHub pages. All other files are meant for collaboration but are still public in this repository. Make sure no personal/sensitive information is commited to this repository.
 
 - Publishing is done by commiting to the main branch. No PR system is set up. All members of this project are allowed to publish to main directly.
+- When a user asks to make a change use `git pull` to ensure you are on the latest version before making code changes
 
 ## Appointments
 Appointments (Afspraken) are managed by introlution. This website simply links to that web site.
